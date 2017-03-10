@@ -1,0 +1,27 @@
+.DS_Store
+Library
+Temp
+*.csproj
+*.pidb
+*.unityproj
+*.sln
+*.suo
+*.userprefs
+obj/
+#######
+# Git
+######
+*.orig
+*.orig.meta
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*.MERGED.*
+
+UnitTests/
+Assembly-CSharp-vsTests/
+Assembly*
+UnityVS.trunk.sln.DotSettings
+Assets/UnityVS.meta
+Assets/UnityVS/
+Data/*
