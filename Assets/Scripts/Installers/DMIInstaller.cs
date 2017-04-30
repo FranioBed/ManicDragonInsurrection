@@ -8,8 +8,11 @@ public class DMIInstaller : MonoInstaller<DMIInstaller>
         //manager binding
         Container.BindInterfacesAndSelfTo<DMIManager>().AsSingle();
 
-        //generators bindings
-        Container.BindInterfacesAndSelfTo<DMIDummyLevelGenerator>().AsSingle();
-        Container.BindInterfacesAndSelfTo<DMIRegularRoomGenerator>().AsSingle();
+        //services binding 
+        Container.Bind<LevelGeneratorService>().AsSingle();
+
+        //generator service components binding
+        Container.Bind<IDMILevelGenerator>().To<DMIDummyLevelGenerator>().AsSingle();
+        Container.Bind<IDMIRoomGenerator>().To<DMIRegularRoomGenerator>().AsSingle();
     }
 }

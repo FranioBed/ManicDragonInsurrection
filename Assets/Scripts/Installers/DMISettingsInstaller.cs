@@ -5,9 +5,17 @@ using Zenject;
 [CreateAssetMenu(fileName = "DMISettingsInstaller", menuName = "Installers/DMISettingsInstaller")]
 public class DMISettingsInstaller : ScriptableObjectInstaller<DMISettingsInstaller>
 {
+    public GameSettings game;
     public LevelSettings level;
     public RoomSettings room;
     public CharacterSettings character;
+
+    [Serializable]
+    public class GameSettings
+    {
+        public bool useFixedSeed;
+        public int fixedSeed;
+    }
 
     [Serializable]
     public class LevelSettings
@@ -31,6 +39,7 @@ public class DMISettingsInstaller : ScriptableObjectInstaller<DMISettingsInstall
 
     public override void InstallBindings()
     {
+        Container.BindInstance(game);
         Container.BindInstance(level);
         Container.BindInstance(room);
         Container.BindInstance(character);

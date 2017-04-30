@@ -4,8 +4,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class DMIManager : ITickable, IFixedTickable
+public class DMIManager : MonoBehaviour, ITickable, IFixedTickable
 {
+    [Inject]
+    LevelGeneratorService levelGeneratorSerivce;
+
+    [Inject]
+    DMISettingsInstaller.GameSettings _settings;
+
+    int seed;  //TODO: set property for constant seed
+
+
+    public void Start()
+    {
+        seed = setSeed();
+        levelGeneratorSerivce.generate(seed);
+    }
+
+    private int setSeed()
+    {
+       if (_settings.useFixedSeed)
+            return _settings.fixedSeed;
+       return new System.Random().Next();
+    }
+
     public void FixedTick()
     {
     //todo
