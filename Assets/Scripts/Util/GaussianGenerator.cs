@@ -7,8 +7,8 @@ namespace Assets.Scripts.Util
 {
     public static class GaussianGenerator
     {
-        public static double getGaussian(double mean, double stdDev, int seed) {
-            Random rand = new Random(seed); //reuse this if you are generating many
+        public static double getGaussian(double mean, double stdDev, System.Random rand) {
+             //reuse this if you are generating many
             double u1 = 1.0 - rand.NextDouble(); //uniform(0,1] random doubles
             double u2 = 1.0 - rand.NextDouble();
             double randStdNormal = Math.Sqrt(-2.0 * Math.Log(u1)) *

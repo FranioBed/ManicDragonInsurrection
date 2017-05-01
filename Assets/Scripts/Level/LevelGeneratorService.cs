@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Level.LevelDTO;
+using Assets.Scripts.Level.TilesTranslator;
 using Assets.Scripts.Util;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -9,40 +9,44 @@ using Zenject;
 public class LevelGeneratorService {
 
     [Inject]
-    IDMILevelGenerator levelGenerator;
+    IDMILevelGenerator _levelGenerator;
     [Inject]
-    IDMIRoomGenerator roomGenerator;
-    //[Inject]
-    //IDMITilesGenerator tilesGenerator;
+    IDMIRoomGenerator _roomGenerator;
+    [Inject]
+    IDMITilesTranslator _tilesGenerator;
     [Inject]
     DMISettingsInstaller.LevelSettings _levelSettings;
 
-
-    internal TileEnum[,] generate(int seed)
+    public LevelInfo generate(int seed)
     {
+        LevelInfo levelInfo = new LevelInfo();
+
         Debug.Log("Using seed:" + seed);
         IntVector2 size = setLevelSize(seed);
 
         IEnumerable<RoomMetaData> roomList;
         Debug.Log("Generating level...");
-        roomList = levelGenerator.generate(seed, size);
+        roomList = _levelGenerator.generate(seed, size);
 
         MetaTileEnum[,] metaTiles = new MetaTileEnum[size.x, size.y];
+        ItemOnTileEnum[,] itemsOnTiles = new ItemOnTileEnum[size.x, size.y];
         Debug.Log("Generating rooms...");
-        roomGenerator.generate(seed, roomList, ref metaTiles);
+        _roomGenerator.generate(seed, roomList, ref metaTiles, ref itemsOnTiles);
 
-        TileEnum[,] finalTiles = new TileEnum[size.x, size.y];
-        //TODO:
-        //finalTiles = tilesGenerator.generate(metaTiles);
+        Debug.Log("Translating metatiles to final tiles...");
+        TileEnum[,] finalTiles = _tilesGenerator.translate(metaTiles);
 
-        return finalTiles;
+        levelInfo.tiles = finalTiles;
+        levelInfo.itemsOnTiles = itemsOnTiles;
+        return levelInfo;
     }
 
     private IntVector2 setLevelSize(int seed)
     {
+        System.Random rand = new System.Random(seed);
         double mean = (_levelSettings.minLevelSize + _levelSettings.maxLevelSize) / 2;
-        float sizeX = (float) GaussianGenerator.getGaussian(mean, _levelSettings.levelSizeVariance, seed);
-        float sizeY = (float) GaussianGenerator.getGaussian(mean, _levelSettings.levelSizeVariance, seed);
+        float sizeX = (float) GaussianGenerator.getGaussian(mean, _levelSettings.levelSizeVariance, rand);
+        float sizeY = (float) GaussianGenerator.getGaussian(mean, _levelSettings.levelSizeVariance, rand);
         int finalSizeX = (int) Math.Round(Mathf.Clamp(sizeX, _levelSettings.minLevelSize, _levelSettings.maxLevelSize));
         int finalSizeY = (int) Math.Round(Mathf.Clamp(sizeY, _levelSettings.minLevelSize, _levelSettings.maxLevelSize));
         return new IntVector2(finalSizeX, finalSizeY);

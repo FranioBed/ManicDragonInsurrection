@@ -5,12 +5,14 @@ using System.Text;
 
 namespace Assets.Scripts.Level.LevelDTO
 {
-    public enum MetaTileEnum
+    public enum ItemOnTileEnum
     {
-        FLOOR_1,
-        FLOOR_2,
-        FLOOR_3,
-        WALL,
-        DOOR
+        NULL,
+        STARTPOS,
+        EXIT,
+        CHEST,
+        ENEMY_1,
+        ENEMY_2,
+        ENEMY_3
     }
 }

@@ -5,12 +5,9 @@ using System.Text;
 
 namespace Assets.Scripts.Level.LevelDTO
 {
-    public enum MetaTileEnum
+    public struct LevelInfo
     {
-        FLOOR_1,
-        FLOOR_2,
-        FLOOR_3,
-        WALL,
-        DOOR
+        public TileEnum[,] tiles;
+        public ItemOnTileEnum[,] itemsOnTiles;
     }
 }

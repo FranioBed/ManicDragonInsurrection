@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Level.LevelDTO;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,18 +8,22 @@ using Zenject;
 public class DMIManager : IInitializable, ITickable, IFixedTickable
 {
     [Inject]
-    LevelGeneratorService levelGeneratorSerivce;
+    LevelGeneratorService _levelGeneratorSerivce;
+    //TODO
+    //AI
+    //UIController
+    //anything that somes to mind...
 
     [Inject]
     DMISettingsInstaller.GameSettings _settings;
 
-    int seed;  //TODO: set property for constant seed
+    int seed;  //TODO: use as readonly property??
 
 
     public void Initialize()
     {
         seed = setSeed();
-        levelGeneratorSerivce.generate(seed);
+        LevelInfo levelInfo = _levelGeneratorSerivce.generate(seed);
     }
 
     private int setSeed()
@@ -30,11 +35,11 @@ public class DMIManager : IInitializable, ITickable, IFixedTickable
 
     public void FixedTick()
     {
-    //todo
+        //todo
     }
 
     public void Tick()
     {
-    //todo
+        //todo
     }
 }

@@ -8,6 +8,10 @@ using UnityEngine;
 public class DMIDummyLevelGenerator : IDMILevelGenerator
 {
 
+    //please use settings in real generation, for dummy generator it can be skipped
+    //[Inject]
+    //DMISettingsInstaller.LevelSettings _settings;
+
     //mock data for room generator
     public IEnumerable<RoomMetaData> generate(int seed, IntVector2 levelSize)
     {

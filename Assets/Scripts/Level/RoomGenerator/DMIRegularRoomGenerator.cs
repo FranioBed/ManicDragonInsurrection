@@ -10,12 +10,14 @@ public class DMIRegularRoomGenerator : IDMIRoomGenerator {
     [Inject]
     DMISettingsInstaller.RoomSettings _settings;
 
-    public void generate(int seed, IEnumerable<RoomMetaData> roomList, ref MetaTileEnum[,] metaTile)
+    public void generate(int seed, IEnumerable<RoomMetaData> roomList,
+        ref MetaTileEnum[,] metaTile, ref ItemOnTileEnum[,] itemsOnTiles)
     {
         System.Random rng = new System.Random(seed);
 
         Debug.Log("Using RegularRoomGenerator");
         fillWithWalls(ref metaTile);
+        fillWithNulls(ref itemsOnTiles);
         foreach (RoomMetaData room in roomList)
         {
             carveRoom(ref metaTile, room, rng);
@@ -23,9 +25,9 @@ public class DMIRegularRoomGenerator : IDMIRoomGenerator {
             if (_settings.useFancyLayouts)
                 applyFancyLayout();
             if (room.hasStart)
-                placeStart(ref metaTile, room, rng);
+                placeStart(ref metaTile, ref itemsOnTiles, room, rng);
             if (room.hasExit)
-                placeExit(ref metaTile, room, rng);
+                placeExit(ref metaTile, ref itemsOnTiles, room, rng);
             //TODO:
             //if (room.enemiesCount > 0)
             //if (room.lootChests > 0)
@@ -37,46 +39,46 @@ public class DMIRegularRoomGenerator : IDMIRoomGenerator {
     private void fillWithWalls(ref MetaTileEnum[,] metaTile)
     {
         for (int m = 0; m < metaTile.GetLength(0); m++)
-        {
             for (int n = 0; n < metaTile.GetLength(1); n++)
-            {
                 metaTile[m, n] = MetaTileEnum.WALL;
-            }
-        }
+    }
+
+    private void fillWithNulls(ref ItemOnTileEnum[,] itemsOnTiles)
+    {
+        for (int m = 0; m < itemsOnTiles.GetLength(0); m++)
+            for (int n = 0; n < itemsOnTiles.GetLength(1); n++)
+                itemsOnTiles[m, n] = ItemOnTileEnum.NULL;
     }
 
     private void insertDoors(ref MetaTileEnum[,] metaTile, RoomMetaData room)
     {
         foreach (IntVector2 doorLocation in room.doorLocations)
-        {
             metaTile[room.position.x + doorLocation.x, room.position.y + doorLocation.y] = MetaTileEnum.DOOR;
-        }
     }
 
     private void carveRoom(ref MetaTileEnum[,] metaTile, RoomMetaData room, System.Random rng)
     {
         MetaTileEnum floorTile = getFloorTile(rng);
         for (int m = room.position.x + 1; m < room.position.x + room.size.x; m++)
-        {
             for (int n = room.position.y + 1; n < room.position.y + room.size.y; n++)
-            {
                 //we leave one empty tile in each direction for walls
                 metaTile[m, n] = floorTile;
-            }
-        }
     }
 
-    private void placeExit(ref MetaTileEnum[,] metaTile, RoomMetaData room, System.Random rng)
+    private void placeExit(ref MetaTileEnum[,] metaTile, ref ItemOnTileEnum[,] itemsOnTiles, 
+        RoomMetaData room, System.Random rng)
     {
-        placeItemOnFloor(ref metaTile, room, MetaTileEnum.EXIT, rng);
+        placeItemOnFloor(ref metaTile, ref itemsOnTiles, room, ItemOnTileEnum.EXIT, rng);
     }
 
-    private void placeStart(ref MetaTileEnum[,] metaTile, RoomMetaData room, System.Random rng)
+    private void placeStart(ref MetaTileEnum[,] metaTile, ref ItemOnTileEnum[,] itemsOnTiles,
+        RoomMetaData room, System.Random rng)
     {
-        placeItemOnFloor(ref metaTile, room, MetaTileEnum.START, rng);
+        placeItemOnFloor(ref metaTile, ref itemsOnTiles, room, ItemOnTileEnum.STARTPOS, rng);
     }
 
-    private void placeItemOnFloor(ref MetaTileEnum[,] metaTile, RoomMetaData room, MetaTileEnum whatToPlace, System.Random rng)
+    private void placeItemOnFloor(ref MetaTileEnum[,] metaTile, ref ItemOnTileEnum[,] itemsOnTiles, 
+        RoomMetaData room, ItemOnTileEnum whatToPlace, System.Random rng)
     {
         IntVector2 attempt;
         do
@@ -85,14 +87,13 @@ public class DMIRegularRoomGenerator : IDMIRoomGenerator {
              rng.Next(room.position.x + 1, room.position.x + room.size.x - 1),
              rng.Next(room.position.y + 1, room.position.y + room.size.y - 1));
         }
-        while (!isFloor(metaTile[attempt.x, attempt.y]));
-        metaTile[attempt.x, attempt.y] = whatToPlace;
+        while (!isFloor(metaTile[attempt.x, attempt.y]) || !itemsOnTiles[attempt.x, attempt.y].Equals(ItemOnTileEnum.NULL));
+        itemsOnTiles[attempt.x, attempt.y] = whatToPlace;
     }
-
-
 
     private void applyFancyLayout()
     {
+        //TODO:
         throw new NotImplementedException();
     }
 
