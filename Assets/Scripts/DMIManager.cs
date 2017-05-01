@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class DMIManager : MonoBehaviour, ITickable, IFixedTickable
+public class DMIManager : IInitializable, ITickable, IFixedTickable
 {
     [Inject]
     LevelGeneratorService levelGeneratorSerivce;
@@ -15,7 +15,7 @@ public class DMIManager : MonoBehaviour, ITickable, IFixedTickable
     int seed;  //TODO: set property for constant seed
 
 
-    public void Start()
+    public void Initialize()
     {
         seed = setSeed();
         levelGeneratorSerivce.generate(seed);

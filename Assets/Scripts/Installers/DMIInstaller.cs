@@ -3,10 +3,14 @@ using Zenject;
 
 public class DMIInstaller : MonoInstaller<DMIInstaller>
 {
+
     public override void InstallBindings()
     {
         //manager binding
-        Container.BindInterfacesAndSelfTo<DMIManager>().AsSingle();
+        Container.Bind<DMIManager>().AsSingle();
+        Container.Bind<IInitializable>().To<DMIManager>().AsSingle();
+        Container.Bind<ITickable>().To<DMIManager>().AsSingle();
+        Container.Bind<IFixedTickable>().To<DMIManager>().AsSingle();
 
         //services binding 
         Container.Bind<LevelGeneratorService>().AsSingle();

@@ -20,15 +20,15 @@ public class DMISettingsInstaller : ScriptableObjectInstaller<DMISettingsInstall
     [Serializable]
     public class LevelSettings
     {
-        public int dummystat;
+        public int minLevelSize;
+        public int maxLevelSize;
+        public float levelSizeVariance;
     }
 
     [Serializable]
     public class RoomSettings
     {
         public bool useFancyLayouts;
-        public float layoutVariance;
-        public bool generateCrazyLoot;
     }
 
     [Serializable]
