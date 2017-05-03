@@ -38,14 +38,28 @@ public class DMIDummyLevelGenerator : IDMILevelGenerator
             size = new IntVector2(6, 8),
             doorLocations = new List<IntVector2>
             {
-                new IntVector2(0, 2)
+                new IntVector2(0, 2),
+                new IntVector2(2, 7)
             },
             hasExit = true,
             hasStart = false
         };
 
+        RoomMetaData room3 = new RoomMetaData
+        {
+            position = new IntVector2(8, 12),
+            size = new IntVector2(4, 4),
+            doorLocations = new List<IntVector2>
+            {
+                new IntVector2(1, 0)
+            },
+            hasExit = false,
+            hasStart = false
+        };
+
         rooms.Add(room1);
         rooms.Add(room2);
+        rooms.Add(room3);
         return rooms;
     }
 }

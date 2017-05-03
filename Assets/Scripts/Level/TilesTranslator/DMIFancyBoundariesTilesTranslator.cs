@@ -120,23 +120,23 @@ namespace Assets.Scripts.Level.TilesTranslator
             {
                 {
                 new SolidOrSpace[3,3] {
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SPACE },
                     { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID } },
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
+                    { SolidOrSpace.SPACE, SolidOrSpace.SOLID, SolidOrSpace.SOLID } },
                 TileEnum.WALL1
+                },
+                {
+                new SolidOrSpace[3,3] {
+                    { SolidOrSpace.ANY  , SolidOrSpace.SPACE, SolidOrSpace.SPACE },
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SPACE },
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.ANY   } },
+                TileEnum.WALL1X
                 },
                 {
                 new SolidOrSpace[3,3] {
                     { SolidOrSpace.ANY  , SolidOrSpace.SOLID, SolidOrSpace.SOLID },
                     { SolidOrSpace.SPACE, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.SPACE, SolidOrSpace.SPACE, SolidOrSpace.ANY   } },
-                TileEnum.WALL1X
-                },
-                {
-                new SolidOrSpace[3,3] {
-                    { SolidOrSpace.ANY  , SolidOrSpace.SPACE, SolidOrSpace.ANY   },
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID } },
+                    { SolidOrSpace.ANY  , SolidOrSpace.SOLID, SolidOrSpace.SOLID } },
                 TileEnum.WALL2
                 },
                 {
@@ -155,9 +155,9 @@ namespace Assets.Scripts.Level.TilesTranslator
                 },
                 {
                 new SolidOrSpace[3,3] {
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.ANY   },
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SPACE },
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.ANY   } },
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
+                    { SolidOrSpace.ANY  , SolidOrSpace.SPACE, SolidOrSpace.ANY   } },
                 TileEnum.WALL4
                 },
                 {
@@ -169,9 +169,9 @@ namespace Assets.Scripts.Level.TilesTranslator
                 },
                 {
                 new SolidOrSpace[3,3] {
-                    { SolidOrSpace.ANY  , SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.SPACE, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.ANY  , SolidOrSpace.SOLID, SolidOrSpace.SOLID } },
+                    { SolidOrSpace.ANY  , SolidOrSpace.SPACE, SolidOrSpace.ANY   },
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID } },
                 TileEnum.WALL6
                 },
                 {
@@ -190,23 +190,23 @@ namespace Assets.Scripts.Level.TilesTranslator
                 },
                 {
                 new SolidOrSpace[3,3] {
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.ANY  , SolidOrSpace.SPACE, SolidOrSpace.ANY   } },
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.ANY   },
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SPACE },
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.ANY   } },
                 TileEnum.WALL8
                 },
                 {
                 new SolidOrSpace[3,3] {
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SPACE },
                     { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.SPACE, SolidOrSpace.SOLID, SolidOrSpace.SOLID } },
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID } },
                 TileEnum.WALL9
                 },
                 {
                 new SolidOrSpace[3,3] {
-                    { SolidOrSpace.ANY  , SolidOrSpace.SPACE, SolidOrSpace.SPACE },
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SPACE },
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.ANY   } },
+                    { SolidOrSpace.ANY  , SolidOrSpace.SOLID, SolidOrSpace.SOLID },
+                    { SolidOrSpace.SPACE, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
+                    { SolidOrSpace.SPACE, SolidOrSpace.SPACE, SolidOrSpace.ANY   } },
                 TileEnum.WALL9X
                 }
             };
@@ -216,30 +216,30 @@ namespace Assets.Scripts.Level.TilesTranslator
             {
                 {
                 new SolidOrSpace[3,3] {
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.ANY  , SolidOrSpace.SPACE, SolidOrSpace.ANY   } },
-                TileEnum.DOOR2
-                },
-                {
-                new SolidOrSpace[3,3] {
                     { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.ANY   },
                     { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SPACE },
                     { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.ANY   } },
-                TileEnum.DOOR4
-                },
-                {
-                new SolidOrSpace[3,3] {
-                    { SolidOrSpace.ANY  , SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.SPACE, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
-                    { SolidOrSpace.ANY  , SolidOrSpace.SOLID, SolidOrSpace.SOLID } },
-                TileEnum.DOOR6
+                TileEnum.DOOR2
                 },
                 {
                 new SolidOrSpace[3,3] {
                     { SolidOrSpace.ANY  , SolidOrSpace.SPACE, SolidOrSpace.ANY   },
                     { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
                     { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID } },
+                TileEnum.DOOR4
+                },
+                {
+                new SolidOrSpace[3,3] {
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
+                    { SolidOrSpace.SOLID, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
+                    { SolidOrSpace.ANY  , SolidOrSpace.SPACE, SolidOrSpace.ANY   } },
+                TileEnum.DOOR6
+                },
+                {
+                new SolidOrSpace[3,3] {
+                    { SolidOrSpace.ANY  , SolidOrSpace.SOLID, SolidOrSpace.SOLID },
+                    { SolidOrSpace.SPACE, SolidOrSpace.SOLID, SolidOrSpace.SOLID },
+                    { SolidOrSpace.ANY  , SolidOrSpace.SOLID, SolidOrSpace.SOLID } },
                 TileEnum.DOOR8
                 }
             };

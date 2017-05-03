@@ -35,7 +35,7 @@ namespace Assets.Scripts.SceneCreator
             GameObject tileInstance = GameObject.Instantiate(prefab);
             //FIXME: Use GameObject reference instead of reflection
             tileInstance.transform.parent = GameObject.Find("TilesContainer").transform;
-            tileInstance.transform.Translate(new Vector3(_levelTiles.tileSpan * m, _levelTiles.tileSpan * n));
+            tileInstance.transform.Translate(new Vector3(_levelTiles.tileSpan * m, _levelTiles.tileSpan * -n));
             return tileInstance;
         }
 
