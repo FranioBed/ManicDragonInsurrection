@@ -1,10 +1,13 @@
 ﻿using Assets.Scripts.Level.LevelDTO;
+using Assets.Scripts.SceneCreator;
 using Zenject;
 
 public class DMIManager : IInitializable, ITickable, IFixedTickable
 {
     [Inject]
     LevelGeneratorService _levelGeneratorSerivce;
+    [Inject]
+    SceneCreatorService _sceneCreatorService;
     //TODO
     //AI
     //UIController
@@ -20,6 +23,7 @@ public class DMIManager : IInitializable, ITickable, IFixedTickable
     {
         seed = setSeed();
         LevelInfo levelInfo = _levelGeneratorSerivce.generate(seed);
+        _sceneCreatorService.Create(levelInfo);
     }
 
     private int setSeed()

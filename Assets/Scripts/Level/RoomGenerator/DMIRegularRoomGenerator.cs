@@ -59,8 +59,8 @@ public class DMIRegularRoomGenerator : IDMIRoomGenerator {
     private void carveRoom(ref MetaTileEnum[,] metaTile, RoomMetaData room, System.Random rng)
     {
         MetaTileEnum floorTile = getFloorTile(rng);
-        for (int m = room.position.x + 1; m < room.position.x + room.size.x; m++)
-            for (int n = room.position.y + 1; n < room.position.y + room.size.y; n++)
+        for (int m = room.position.x + 1; m < room.position.x + room.size.x - 1; m++)
+            for (int n = room.position.y + 1; n < room.position.y + room.size.y - 1; n++)
                 //we leave one empty tile in each direction for walls
                 metaTile[m, n] = floorTile;
     }
@@ -84,8 +84,8 @@ public class DMIRegularRoomGenerator : IDMIRoomGenerator {
         do
         {
             attempt = new IntVector2(
-             rng.Next(room.position.x + 1, room.position.x + room.size.x - 1),
-             rng.Next(room.position.y + 1, room.position.y + room.size.y - 1));
+             rng.Next(room.position.x + 1, room.position.x + room.size.x - 2),
+             rng.Next(room.position.y + 1, room.position.y + room.size.y - 2));
         }
         while (!isFloor(metaTile[attempt.x, attempt.y]) || !itemsOnTiles[attempt.x, attempt.y].Equals(ItemOnTileEnum.NULL));
         itemsOnTiles[attempt.x, attempt.y] = whatToPlace;

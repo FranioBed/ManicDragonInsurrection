@@ -34,7 +34,7 @@ namespace Assets.Scripts.Level.TilesTranslator
                     {
                         neightbours[m, n] = metaTiles[m + central_m - 1, n + central_n - 1];
                     }
-                    catch (IndexOutOfRangeException e)
+                    catch (IndexOutOfRangeException)
                     {
                         neightbours[m, n] = MetaTileEnum.WALL;
                     }

@@ -26,7 +26,7 @@ public class DMIDummyLevelGenerator : IDMILevelGenerator
             size = new IntVector2(5, 6),
             doorLocations = new List<IntVector2>
             {
-                new IntVector2(5, 4)
+                new IntVector2(4, 4)
             },
             hasExit = false,
             hasStart = true
