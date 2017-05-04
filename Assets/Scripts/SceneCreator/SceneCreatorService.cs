@@ -8,9 +8,10 @@ namespace Assets.Scripts.SceneCreator
 {
     public class SceneCreatorService
     {
-
         [Inject]
         LevelTilesSpawner _tilesSpawner;
+        [Inject]
+        LevelItemsSpawner _itemsSpawner;
 
         public void Create(LevelInfo levelInfo)
         {
@@ -21,12 +22,12 @@ namespace Assets.Scripts.SceneCreator
         
         private void instantiateTiles(TileEnum[,] tiles)
         {
-            _tilesSpawner.spawnMap(tiles);
+            _tilesSpawner.spawn(tiles);
         }
 
         private void instantiateItems(ItemOnTileEnum[,] itemsOnTiles)
         {
-            Debug.LogError("INSTANTIATING TILES NOT IMPLEMENTED");
+            _itemsSpawner.spawn(itemsOnTiles);
         }
 
         public void cleanUp()

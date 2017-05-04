@@ -28,5 +28,6 @@ public class DMIInstaller : MonoInstaller
 
         //level spawner components
         Container.Bind<LevelTilesSpawner>().AsSingle();
+        Container.Bind<LevelItemsSpawner>().AsSingle();
     }
 }

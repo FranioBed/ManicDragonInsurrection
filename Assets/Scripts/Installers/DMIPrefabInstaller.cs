@@ -11,6 +11,7 @@ namespace Assets.Scripts.Installers
 
         public override void InstallBindings()
         {
+            //install prefabs factories here (character, enemies etc)
             /*
             Container.BindFactory<TileEnum, LevelTile, LevelTile.Factory>()
                 .FromComponentInNewPrefab(_prefabs.levelTiles.floor1)

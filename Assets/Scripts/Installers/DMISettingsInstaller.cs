@@ -41,14 +41,21 @@ public class DMISettingsInstaller : ScriptableObjectInstaller<DMISettingsInstall
     [Serializable]
     public class UsedPrefabs
     {
+        public PrefabsConfig prefabConfig;
         public LevelTiles levelTiles;
+        public LevelItems levelItems;
         public bool plzAddCharsAndItemsEtc;
+    }
+
+    [Serializable]
+    public class PrefabsConfig
+    {
+        public float tileSpan;
     }
 
     [Serializable]
     public class LevelTiles
     {
-        public float tileSpan;
         public GameObject floor1;
         public GameObject floor2;
         public GameObject floor3;
@@ -71,6 +78,13 @@ public class DMISettingsInstaller : ScriptableObjectInstaller<DMISettingsInstall
         public GameObject wall9x;
     }
 
+    [Serializable]
+    public class LevelItems
+    {
+        public GameObject exit;
+        public GameObject chest;
+    }
+
     public override void InstallBindings()
     {
         Container.BindInstance(game);
@@ -78,6 +92,8 @@ public class DMISettingsInstaller : ScriptableObjectInstaller<DMISettingsInstall
         Container.BindInstance(level.roomsSettings);
         Container.BindInstance(character);
         Container.BindInstance(prefabs);
+        Container.BindInstance(prefabs.prefabConfig);
         Container.BindInstance(prefabs.levelTiles);
+        Container.BindInstance(prefabs.levelItems);
     }
 }
