@@ -1,0 +1,1 @@
+﻿public enum StatTypes { Health, Magic, Strength, Agility }
