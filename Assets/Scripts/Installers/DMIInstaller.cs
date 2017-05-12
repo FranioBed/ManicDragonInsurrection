@@ -22,7 +22,7 @@ public class DMIInstaller : MonoInstaller
         
 
         //generator service components binding
-        Container.Bind<IDMILevelGenerator>().To<DMIDummyLevelGenerator>().AsSingle();
+        Container.Bind<IDMILevelGenerator>().To<DMILevelGenerator>().AsSingle();
         Container.Bind<IDMIRoomGenerator>().To<DMIRegularRoomGenerator>().AsSingle();
         Container.Bind<IDMITilesTranslator>().To<DMIFancyBoundariesTilesTranslator>().AsSingle();
 
