@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Level.LevelDTO;
 using Assets.Scripts.SceneCreator;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour {
     {
         seed = setSeed();
         LevelInfo levelInfo = _levelGeneratorSerivce.generate(seed);
-        _sceneCreatorService.Create(levelInfo);
+        IEnumerable<Marker> markers = _sceneCreatorService.Create(levelInfo);
     }
 
     private int setSeed()

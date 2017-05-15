@@ -22,12 +22,13 @@ public class Installer : MonoInstaller
         
 
         //generator service components binding
-        Container.Bind<ILevelGenerator>().To<LevelGenerator>().AsSingle();
+        Container.Bind<ILevelGenerator>().To<DummyLevelGenerator>().AsSingle();
         Container.Bind<IIRoomGenerator>().To<RegularRoomGenerator>().AsSingle();
         Container.Bind<ITilesTranslator>().To<FancyBoundariesTilesTranslator>().AsSingle();
 
         //level spawner components
         Container.Bind<LevelTilesSpawner>().AsSingle();
         Container.Bind<LevelItemsSpawner>().AsSingle();
+        Container.Bind<LevelItemMarker>().AsSingle();
     }
 }

@@ -12,24 +12,18 @@ namespace Assets.Scripts.SceneCreator
         LevelTilesSpawner _tilesSpawner;
         [Inject]
         LevelItemsSpawner _itemsSpawner;
+        [Inject]
+        LevelItemMarker _itemsMarker;
 
-        public void Create(LevelInfo levelInfo)
+        public IEnumerable<Marker> Create(LevelInfo levelInfo)
         {
             cleanUp();
-            instantiateTiles(levelInfo.tiles);
-            instantiateItems(levelInfo.itemsOnTiles);
+            _tilesSpawner.spawn(levelInfo.tiles);
+            _itemsSpawner.spawn(levelInfo.itemsOnTiles);
+            IEnumerable<Marker> markers = _itemsMarker.getMarkers(levelInfo.itemsOnTiles);
+            return markers;
         }
         
-        private void instantiateTiles(TileEnum[,] tiles)
-        {
-            _tilesSpawner.spawn(tiles);
-        }
-
-        private void instantiateItems(ItemOnTileEnum[,] itemsOnTiles)
-        {
-            _itemsSpawner.spawn(itemsOnTiles);
-        }
-
         public void cleanUp()
         {
             Debug.LogError("CLEANING UP NOT IMPLEMENTED");
