@@ -4,10 +4,10 @@ using Zenject;
 
 namespace Assets.Scripts.Installers
 {
-    public class DMIPrefabInstaller : MonoInstaller
+    public class PrefabInstaller : MonoInstaller
     {
         [Inject]
-        DMISettingsInstaller.UsedPrefabs _prefabs;
+        SettingsInstaller.UsedPrefabs _prefabs;
 
         public override void InstallBindings()
         {

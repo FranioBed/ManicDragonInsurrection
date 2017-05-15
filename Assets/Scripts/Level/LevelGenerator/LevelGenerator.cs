@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DMILevelGenerator : IDMILevelGenerator
+public class LevelGenerator : ILevelGenerator
 {
     
 

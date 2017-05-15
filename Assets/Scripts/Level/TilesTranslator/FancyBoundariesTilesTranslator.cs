@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Assets.Scripts.Level.TilesTranslator
 {
-    class DMIFancyBoundariesTilesTranslator : IDMITilesTranslator
+    class FancyBoundariesTilesTranslator : ITilesTranslator
     {
         public TileEnum[,] translate(MetaTileEnum[,] metaTiles)
         {

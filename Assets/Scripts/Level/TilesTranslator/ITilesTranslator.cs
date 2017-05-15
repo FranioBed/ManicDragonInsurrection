@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Assets.Scripts.Level.TilesTranslator
 {
-    public interface IDMITilesTranslator
+    public interface ITilesTranslator
     {
         TileEnum[,] translate(MetaTileEnum[,] metaTiles);
     }

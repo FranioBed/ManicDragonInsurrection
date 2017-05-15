@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Assets.Scripts.SceneCreator
 {
 
-    class LevelItemsSpawner : LevelAbstractSpawner<ItemOnTileEnum, DMISettingsInstaller.LevelItems>
+    class LevelItemsSpawner : LevelAbstractSpawner<ItemOnTileEnum, SettingsInstaller.LevelItems>
     {
         protected override Dictionary<ItemOnTileEnum, GameObject> populateMapping()
         {

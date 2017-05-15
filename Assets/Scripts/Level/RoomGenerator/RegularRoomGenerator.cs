@@ -5,10 +5,10 @@ using System;
 using System.Collections.Generic;
 using Assets.Scripts.Util;
 
-public class DMIRegularRoomGenerator : IDMIRoomGenerator {
+public class RegularRoomGenerator : IIRoomGenerator {
 
     [Inject]
-    DMISettingsInstaller.RoomSettings _settings;
+    SettingsInstaller.RoomSettings _settings;
 
     public void generate(int seed, IEnumerable<RoomMetaData> roomList,
         ref MetaTileEnum[,] metaTile, ref ItemOnTileEnum[,] itemsOnTiles)

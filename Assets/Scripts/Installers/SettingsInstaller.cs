@@ -2,8 +2,8 @@ using System;
 using UnityEngine;
 using Zenject;
 
-[CreateAssetMenu(fileName = "DMISettingsInstaller", menuName = "Installers/DMISettingsInstaller")]
-public class DMISettingsInstaller : ScriptableObjectInstaller<DMISettingsInstaller>
+[CreateAssetMenu(fileName = "SettingsInstaller", menuName = "Installers/SettingsInstaller")]
+public class SettingsInstaller : ScriptableObjectInstaller<SettingsInstaller>
 {
     public GameSettings game;
     public LevelSettings level;

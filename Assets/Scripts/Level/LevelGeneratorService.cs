@@ -9,13 +9,13 @@ using Zenject;
 public class LevelGeneratorService {
 
     [Inject]
-    IDMILevelGenerator _levelGenerator;
+    ILevelGenerator _levelGenerator;
     [Inject]
-    IDMIRoomGenerator _roomGenerator;
+    IIRoomGenerator _roomGenerator;
     [Inject]
-    IDMITilesTranslator _tilesGenerator;
+    ITilesTranslator _tilesGenerator;
     [Inject]
-    DMISettingsInstaller.LevelSettings _levelSettings;
+    SettingsInstaller.LevelSettings _levelSettings;
 
     public LevelInfo generate(int seed)
     {

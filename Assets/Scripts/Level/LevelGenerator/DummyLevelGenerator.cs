@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DMIDummyLevelGenerator : IDMILevelGenerator
+public class DummyLevelGenerator : ILevelGenerator
 {
 
     //please use settings in real generation, for dummy generator it can be skipped

@@ -6,7 +6,7 @@ using Zenject;
 namespace Assets.Scripts.SceneCreator
 {
     
-    public class LevelTilesSpawner : LevelAbstractSpawner<TileEnum,DMISettingsInstaller.LevelTiles>
+    public class LevelTilesSpawner : LevelAbstractSpawner<TileEnum,SettingsInstaller.LevelTiles>
     {
 
         override protected Dictionary<TileEnum, GameObject> populateMapping()

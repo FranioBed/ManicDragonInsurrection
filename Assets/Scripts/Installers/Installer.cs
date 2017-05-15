@@ -2,7 +2,7 @@ using Assets.Scripts.Level.TilesTranslator;
 using Assets.Scripts.SceneCreator;
 using Zenject;
 
-public class DMIInstaller : MonoInstaller
+public class Installer : MonoInstaller
 {
 
     public override void InstallBindings()
@@ -11,10 +11,10 @@ public class DMIInstaller : MonoInstaller
         //Container.BindInstance(foo);
 
         //manager binding
-        Container.Bind<DMIManager>().AsSingle();
-        Container.Bind<IInitializable>().To<DMIManager>().AsSingle();
-        Container.Bind<ITickable>().To<DMIManager>().AsSingle();
-        Container.Bind<IFixedTickable>().To<DMIManager>().AsSingle();
+        Container.Bind<GameManager>().AsSingle();
+        //Container.Bind<IInitializable>().To<GameManager>().AsSingle();
+        //Container.Bind<ITickable>().To<GameManager>().AsSingle();
+        //Container.Bind<IFixedTickable>().To<GameManager>().AsSingle();
 
         //services binding 
         Container.Bind<LevelGeneratorService>().AsSingle();
@@ -22,9 +22,9 @@ public class DMIInstaller : MonoInstaller
         
 
         //generator service components binding
-        Container.Bind<IDMILevelGenerator>().To<DMILevelGenerator>().AsSingle();
-        Container.Bind<IDMIRoomGenerator>().To<DMIRegularRoomGenerator>().AsSingle();
-        Container.Bind<IDMITilesTranslator>().To<DMIFancyBoundariesTilesTranslator>().AsSingle();
+        Container.Bind<ILevelGenerator>().To<LevelGenerator>().AsSingle();
+        Container.Bind<IIRoomGenerator>().To<RegularRoomGenerator>().AsSingle();
+        Container.Bind<ITilesTranslator>().To<FancyBoundariesTilesTranslator>().AsSingle();
 
         //level spawner components
         Container.Bind<LevelTilesSpawner>().AsSingle();

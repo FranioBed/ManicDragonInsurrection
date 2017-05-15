@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DMISimpleTilesTranslator : IDMITilesTranslator
+public class SimpleTilesTranslator : ITilesTranslator
 {
     public TileEnum[,] translate(MetaTileEnum[,] metaTiles)
     {

@@ -1,9 +1,9 @@
 ﻿using Assets.Scripts.Level.LevelDTO;
 using Assets.Scripts.SceneCreator;
+using UnityEngine;
 using Zenject;
 
-public class DMIManager : IInitializable, ITickable, IFixedTickable
-{
+public class GameManager : MonoBehaviour { 
     [Inject]
     LevelGeneratorService _levelGeneratorSerivce;
     [Inject]
@@ -12,14 +12,15 @@ public class DMIManager : IInitializable, ITickable, IFixedTickable
     //AI
     //UIController
     //anything that somes to mind...
-
     [Inject]
-    DMISettingsInstaller.GameSettings _settings;
+    SettingsInstaller.GameSettings _settings;
+
+    public GameObject playerPrefab;
 
     int seed;  //TODO: use as readonly property??
 
 
-    public void Initialize()
+    public void Start()
     {
         seed = setSeed();
         LevelInfo levelInfo = _levelGeneratorSerivce.generate(seed);
@@ -33,12 +34,12 @@ public class DMIManager : IInitializable, ITickable, IFixedTickable
        return new System.Random().Next();
     }
 
-    public void FixedTick()
+    public void FixedUpdate()
     {
         //todo
     }
 
-    public void Tick()
+    public void Update()
     {
         //todo
     }

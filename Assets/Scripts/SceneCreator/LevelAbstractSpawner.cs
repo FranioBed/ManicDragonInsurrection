@@ -9,7 +9,7 @@ namespace Assets.Scripts.SceneCreator
     public abstract class LevelAbstractSpawner<InputType,ConfigType>
     {
         [Inject]
-        DMISettingsInstaller.PrefabsConfig _prefabConfig;
+        SettingsInstaller.PrefabsConfig _prefabConfig;
         [Inject]
         protected ConfigType _configOfType;
 
