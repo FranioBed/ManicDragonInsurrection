@@ -13,7 +13,7 @@ public class DummyLevelGenerator : ILevelGenerator
     //DMISettingsInstaller.LevelSettings _settings;
 
     //mock data for room generator
-    public IEnumerable<RoomMetaData> generate(int seed, IntVector2 levelSize)
+    public IEnumerable<RoomMetaData> generate(int seed, ref IntVector2 levelSize)
     {
         if ((levelSize.x < 20) || (levelSize.y < 20)) {
             throw new NotSupportedException("Can mock only on 20x20 or greater map");

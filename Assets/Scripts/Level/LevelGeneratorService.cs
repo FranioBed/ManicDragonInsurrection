@@ -26,7 +26,7 @@ public class LevelGeneratorService {
 
         IEnumerable<RoomMetaData> roomList;
         Debug.Log("Generating level...");
-        roomList = _levelGenerator.generate(seed, size);
+        roomList = _levelGenerator.generate(seed, ref size);
 
         MetaTileEnum[,] metaTiles = new MetaTileEnum[size.x, size.y];
         ItemOnTileEnum[,] itemsOnTiles = new ItemOnTileEnum[size.x, size.y];

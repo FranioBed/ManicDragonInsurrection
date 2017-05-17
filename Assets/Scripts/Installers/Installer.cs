@@ -19,10 +19,11 @@ public class Installer : MonoInstaller
         //services binding 
         Container.Bind<LevelGeneratorService>().AsSingle();
         Container.Bind<SceneCreatorService>().AsSingle();
-        
+
 
         //generator service components binding
-        Container.Bind<ILevelGenerator>().To<DummyLevelGenerator>().AsSingle();
+        //Container.Bind<ILevelGenerator>().To<DummyLevelGenerator>().AsSingle();
+        Container.Bind<ILevelGenerator>().To<MapModelGenerator>().AsSingle();
         Container.Bind<IIRoomGenerator>().To<RegularRoomGenerator>().AsSingle();
         Container.Bind<ITilesTranslator>().To<FancyBoundariesTilesTranslator>().AsSingle();
 

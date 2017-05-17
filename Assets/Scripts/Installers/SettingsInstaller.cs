@@ -24,12 +24,19 @@ public class SettingsInstaller : ScriptableObjectInstaller<SettingsInstaller>
         public int maxLevelSize;
         public float levelSizeVariance;
         public RoomSettings roomsSettings;
+
+        public int mapModelPathCount;
+        public int mapModelRoomCount;
     }
 
     [Serializable]
     public class RoomSettings
     {
         public bool useFancyLayouts;
+        public int maxRoomSizeX;
+        public int minRoomSizeX;
+        public int maxRoomSizeY;
+        public int minRoomSizeY;
     }
 
     [Serializable]
