@@ -1,0 +1,142 @@
+using LitJson;
+
+JsonData data = JsonMapper.ToObject(www.text);
+List<RankingRow> list = JsonMapper.ToObject<List<RankingRow>>(data["Ranking"].ToString());
+{set; get;} i konstruktor, nazwy te same
+
+{
+	"usable":[
+	{
+		"name": "item01",
+		"description": "empty",
+		"features":[
+		{
+			"type": "instant",
+			"stat": "health",
+			"amount": 0.5
+		}
+		]
+	},
+	{
+		"name": "item02",
+		"description": "empty",
+		"features": [
+		{
+			"type": "continues",
+			"stat": "health",
+			"amount": 0.05,
+			"interval": 1,
+			"duration": 10
+		}
+		]
+	},
+	{
+		"name": "item03",
+		"description": "empty",
+		"features": [
+		{
+			"type": "temp",
+			"stat": "health",
+			"amount": 2,
+			"duration": 20
+		}
+		]
+	},
+	{
+		"name": "item04",
+		"description": "empty",
+		"features": [
+		{
+			"type": "instant",
+			"stat": "mana",
+			"amount": 1
+		}
+		]
+	},
+	{
+		"name": "item05",
+		"description": "empty",
+		"features": [
+		{
+			"type": "continues",
+			"stat": "mana",
+			"amount": 0.1,
+			"interval": 1,
+			"duration": 10
+		}
+		]
+	},
+	{
+		"name": "item06",
+		"description": "empty",
+		"features": [
+		{
+			"type": "temp",
+			"stat": "mana",
+			"amount": 3,
+			"duration": 20
+		}
+		]
+	},
+	{
+		"name": "item07",
+		"description": "empty",
+		"features": [
+		{
+			"type": "temp",
+			"stat": "movementSpeed",
+			"amount": 1.2,
+			"duration": 10
+		},
+		{
+			"type": "temp",
+			"stat": "attackSpeed",
+			"amount": 0.8,
+			"duration": 10
+		}
+		]
+	},
+	{
+		"name": "item08",
+		"description": "empty",
+		"features": [
+		{
+			"type": "temp",
+			"stat": "weaponDamage",
+			"amount": 1.5,
+			"duration": 10
+		},
+		{
+			"type": "temp",
+			"stat": "weaponRange",
+			"amount": 1.5,
+			"duration": 10
+		}
+		]
+	},
+	{
+		"name": "item09",
+		"description": "empty",
+		"features": [
+		{
+			"type": "temp",
+			"stat": "cooldown",
+			"amount": 0.5,
+			"duration": 10
+		}
+		]
+	},
+	{
+		"name": "item10",
+		"description": "empty",
+		"features": [
+		{
+			"type": "temp",
+			"stat": "invisible",
+			"amount": 1,
+			"duration": 10
+		}
+		]
+	}
+	]
+}	

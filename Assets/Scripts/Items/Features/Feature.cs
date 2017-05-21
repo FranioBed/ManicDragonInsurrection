@@ -3,4 +3,7 @@
 public abstract class Feature : MonoBehaviour {
     public int Amount { get; private set; }
     public StatTypes Type { get; private set; }
+
+    public virtual void Activate() { }
+    public virtual void Deactivate() { }
 }
