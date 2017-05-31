@@ -1,134 +1,134 @@
 {
 	"usable":[
 	{
-		"name": "item01",
-		"description": "empty",
-		"features":[
+		"Name": "item01",
+		"Description": "empty",
+		"Features":[
 		{
-			"type": 0,
-			"stat": "health",
-			"amount": 0.5
+			"Type": 0,
+			"Stat": 0,
+			"Amount": 0.5
 		}
 		]
 	},
 	{
-		"name": "item02",
-		"description": "empty",
-		"features": [
+		"Name": "item02",
+		"Description": "empty",
+		"Features": [
 		{
-			"type": 1,
-			"stat": "health",
-			"amount": 0.05,
-			"interval": 1,
-			"duration": 10
+			"Type": 1,
+			"Stat": 0,
+			"Amount": 0.05,
+			"Interval": 1,
+			"Duration": 10
 		}
 		]
 	},
 	{
-		"name": "item03",
-		"description": "empty",
-		"features": [
+		"Name": "item03",
+		"Description": "empty",
+		"Features": [
 		{
-			"type": 2,
-			"stat": "health",
-			"amount": 2,
-			"duration": 20
+			"Type": 2,
+			"Stat": 0,
+			"Amount": 2,
+			"Duration": 20
 		}
 		]
 	},
 	{
-		"name": "item04",
-		"description": "empty",
-		"features": [
+		"Name": "item04",
+		"Description": "empty",
+		"Features": [
 		{
-			"type": 0,
-			"stat": "mana",
-			"amount": 1
+			"Type": 0,
+			"Stat": 1,
+			"Amount": 1
 		}
 		]
 	},
 	{
-		"name": "item05",
-		"description": "empty",
-		"features": [
+		"Name": "item05",
+		"Description": "empty",
+		"Features": [
 		{
-			"type": 1,
-			"stat": "mana",
-			"amount": 0.1,
-			"interval": 1,
-			"duration": 10
+			"Type": 1,
+			"Stat": 1,
+			"Amount": 0.1,
+			"Interval": 1,
+			"Duration": 10
 		}
 		]
 	},
 	{
-		"name": "item06",
-		"description": "empty",
-		"features": [
+		"Name": "item06",
+		"Description": "empty",
+		"Features": [
 		{
-			"type": 2,
-			"stat": "mana",
-			"amount": 3,
-			"duration": 20
+			"Type": 2,
+			"Stat": 1,
+			"Amount": 3,
+			"Duration": 20
 		}
 		]
 	},
 	{
-		"name": "item07",
-		"description": "empty",
-		"features": [
+		"Name": "item07",
+		"Description": "empty",
+		"Features": [
 		{
-			"type": 2,
-			"stat": "movementSpeed",
-			"amount": 1.2,
-			"duration": 10
+			"Type": 2,
+			"Stat": 2,
+			"Amount": 1.2,
+			"Duration": 10
 		},
 		{
-			"type": 2,
-			"stat": "attackSpeed",
-			"amount": 0.8,
-			"duration": 10
+			"Type": 2,
+			"Stat": 3,
+			"Amount": 0.8,
+			"Duration": 10
 		}
 		]
 	},
 	{
-		"name": "item08",
-		"description": "empty",
-		"features": [
+		"Name": "item08",
+		"Description": "empty",
+		"Features": [
 		{
-			"type": 2,
-			"stat": "weaponDamage",
-			"amount": 1.5,
-			"duration": 10
+			"Type": 2,
+			"Stat": 3,
+			"Amount": 1.5,
+			"Duration": 10
 		},
 		{
-			"type": 2,
-			"stat": "weaponRange",
-			"amount": 1.5,
-			"duration": 10
+			"Type": 2,
+			"Stat": 2,
+			"Amount": 1.5,
+			"Duration": 10
 		}
 		]
 	},
 	{
-		"name": "item09",
-		"description": "empty",
-		"features": [
+		"Name": "item09",
+		"Description": "empty",
+		"Features": [
 		{
-			"type": 2,
-			"stat": "cooldown",
-			"amount": 0.5,
-			"duration": 10
+			"Type": 2,
+			"Stat": 1,
+			"Amount": 0.5,
+			"Duration": 10
 		}
 		]
 	},
 	{
-		"name": "item10",
-		"description": "empty",
-		"features": [
+		"Name": "item10",
+		"Description": "empty",
+		"Features": [
 		{
-			"type": 2,
-			"stat": "invisible",
-			"amount": 1,
-			"duration": 10
+			"Type": 2,
+			"Stat": 1,
+			"Amount": 1,
+			"Duration": 10
 		}
 		]
 	}

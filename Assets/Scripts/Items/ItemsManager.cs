@@ -6,14 +6,15 @@ using UnityEngine;
 
 public class ItemsManager : MonoBehaviour
 {
-    private const string usableItemsJsonFile = "/Resources/JSON Files/Items/usable-items.json";
-    private const string equippableItemsJsonFile = "/Resources/JSON Files/Items/equippable-items.json";
-    private List<UsableItem> usableItems;
-    private List<EquippableItem> exuippableItems;
+    private const string usableItemsJsonFile = "../ManicDragonInsurrection/Assets/Resources/JSON Files/Items/usable-items.json";
+    private const string equippableItemsJsonFile = "../ManicDragonInsurrection/Assets/Resources/JSON Files/Items/equippable-items.json";
+    private List<UsableItem> usableItems = new List<UsableItem>();
+    private List<EquippableItem> exuippableItems = new List<EquippableItem>();
 
     void Awake()
     {
         LoadUsableItemsListFromFile(usableItemsJsonFile);
+        //Debug.Log("Usable items count: " + usableItems.Count);
         LoadEquippableItemsListFromFile(equippableItemsJsonFile);
     }
 
@@ -26,30 +27,48 @@ public class ItemsManager : MonoBehaviour
     {
         try
         {
-            //{set; get;}; konstruktor, nazwy te same
             //List<RankingRow> list = JsonMapper.ToObject<List<RankingRow>>(data["Ranking"].ToString());
             //BuildingsLevel levels = JsonMapper.ToObject<BuildingsLevel>(data["Buildings"].ToString());
             //data["album"]["name"]
             string json = File.ReadAllText(path);
             JsonData data = JsonMapper.ToObject(json);
-            data = JsonMapper.ToObject(data["usable"].ToString());
 
-            foreach (JsonData elem in data)
+            foreach (JsonData elem in data["usable"])
             {
-                UsableItem item = new UsableItem(elem["name"].ToString(), elem["description"].ToString());
-                foreach (JsonData feature in data["features"])
+                UsableItem item = new UsableItem(elem["Name"].ToString(), elem["Description"].ToString());
+                foreach (JsonData feature in elem["Features"])
                 {
-                    if (feature["type"].Equals((int)Feature.FeatureTypes.Instant))
+                    if (feature["Type"].Equals((int)Feature.FeatureTypes.Instant))
                     {
-                        item.features.Add(JsonMapper.ToObject<InstantStatModFeature>(feature.ToString()));
+                        item.features.Add(new InstantStatModFeature(
+                            float.Parse(feature["Amount"].ToString()),
+                            (StatTypes)(int)feature["Stat"],
+                            Feature.FeatureTypes.Instant
+                            ));
+                        //TODO: czemu to nie dziala? przez enumy?
+                        //item.features.Add(JsonMapper.ToObject<InstantStatModFeature>(feature.ToString()));
+                        //TODO: solution?:
+                        //JsonMapper.RegisterExporter<float>((obj, writer) => writer.Write(Convert.ToDouble(obj)));
+                        //JsonMapper.RegisterImporter<double, float>(input => Convert.ToSingle(input));
                     }
-                    else if (feature["type"].Equals((int)Feature.FeatureTypes.Continues))
+                    else if (feature["Type"].Equals((int)Feature.FeatureTypes.Continues))
                     {
-                        item.features.Add(JsonMapper.ToObject<ContinuesStatModFeature>(feature.ToString()));
+                        item.features.Add(new ContinuesStatModFeature(
+                            float.Parse(feature["Duration"].ToString()),
+                            float.Parse(feature["Interval"].ToString()),
+                            float.Parse(feature["Amount"].ToString()),
+                            (StatTypes)(int)feature["Stat"],
+                            Feature.FeatureTypes.Continues));
+                        //item.features.Add(JsonMapper.ToObject<ContinuesStatModFeature>(feature.ToString()));
                     }
-                    else if (feature["type"].Equals((int)Feature.FeatureTypes.Temp))
+                    else if (feature["Type"].Equals((int)Feature.FeatureTypes.Temp))
                     {
-                        item.features.Add(JsonMapper.ToObject<TempStatModFeature>(feature.ToString()));
+                        item.features.Add(new TempStatModFeature(
+                            float.Parse(feature["Duration"].ToString()),
+                            float.Parse(feature["Amount"].ToString()),
+                            (StatTypes)(int)feature["Stat"],
+                            Feature.FeatureTypes.Temp));
+                        //item.features.Add(JsonMapper.ToObject<TempStatModFeature>(feature.ToString()));
                     }
                 }
                 usableItems.Add(item);

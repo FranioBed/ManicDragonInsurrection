@@ -1,7 +1,7 @@
 ﻿public class TempStatModFeature : Feature {
-    public float Duration { get; private set; }
+    public float Duration { get; set; }
 
-    public TempStatModFeature(float duration, int amount, StatTypes stat, FeatureTypes type)
+    public TempStatModFeature(float duration, float amount, StatTypes stat, FeatureTypes type)
         : base(amount, stat, type)
     {
         Duration = duration;

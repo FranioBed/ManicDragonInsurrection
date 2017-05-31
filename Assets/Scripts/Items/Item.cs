@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Item : MonoBehaviour
+public abstract class Item
 {
     public string Name { get; set; }
     public string Description { get; set; }
     public Sprite Miniature { get; set; }
 
-    public List<Feature> features;
+    public List<Feature> features = new List<Feature>();
 
     protected Item(string name, string description)
     {
