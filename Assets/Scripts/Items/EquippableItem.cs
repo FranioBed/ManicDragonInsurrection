@@ -1,7 +1,10 @@
 ﻿public class EquippableItem : Item {
-    public EquippableItem(string name, string description) : base(name, description)
-    {
+    public enum EquippableType { Armor, Weapon }
+    public EquippableType Type { get; set; }
 
+    public EquippableItem(string name, string description, EquippableType type) : base(name, description)
+    {
+        Type = type;
     }
     public void Equip()
     {

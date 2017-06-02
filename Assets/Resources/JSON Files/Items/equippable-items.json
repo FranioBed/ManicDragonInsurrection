@@ -1,0 +1,86 @@
+{
+	"equippable":[
+	{
+		"Name": "armor01",
+		"Description": "empty",
+		"Type": 0,
+		"Features":[
+		{
+			"Type": 0,
+			"Stat": 0,
+			"Amount": 50
+		}
+		]
+	},
+	{
+		"Name": "armor02",
+		"Description": "empty",
+		"Type": 0,
+		"Features": [
+		{
+			"Type": 0,
+			"Stat": 0,
+			"Amount": 100
+		}
+		]
+	},
+	{
+		"Name": "armor03",
+		"Description": "empty",
+		"Type": 0,	
+		"Features": [
+		{
+			"Type": 0,
+			"Stat": 0,
+			"Amount": 50
+		},
+		{
+			"Type": 0,
+			"Stat": 1,
+			"Amount": 50
+		}
+		]
+	},
+	{
+		"Name": "weapon01",
+		"Description": "empty",
+		"Type": 1,
+		"Features": [
+		{
+			"Type": 0,
+			"Stat": 2,
+			"Amount": 10
+		}
+		]
+	},
+	{
+		"Name": "weapon02",
+		"Description": "empty",
+		"Type": 1,
+		"Features": [
+		{
+			"Type": 0,
+			"Stat": 2,
+			"Amount": 20
+		}
+		]
+	},
+		{
+		"Name": "weapon03",
+		"Description": "empty",
+		"Type": 1,
+		"Features": [
+		{
+			"Type": 0,
+			"Stat": 3,
+			"Amount": 10
+		},
+		{
+			"Type": 0,
+			"Stat": 2,
+			"Amount": 10
+		}
+		]
+	}
+	]
+}	

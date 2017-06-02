@@ -14,13 +14,33 @@ public class ItemsManager : MonoBehaviour
     void Awake()
     {
         LoadUsableItemsListFromFile(usableItemsJsonFile);
-        //Debug.Log("Usable items count: " + usableItems.Count);
+        Debug.Log("Usable items count: " + usableItems.Count);
         LoadEquippableItemsListFromFile(equippableItemsJsonFile);
+        Debug.Log("Equippable items count: " + exuippableItems.Count);
     }
 
     private void LoadEquippableItemsListFromFile(string path)
     {
-        throw new System.NotImplementedException();
+        try
+        {
+            string json = File.ReadAllText(path);
+            JsonData data = JsonMapper.ToObject(json);
+            //TODO: start from HERE:
+            foreach (JsonData elem in data["equippable"])
+            {
+                EquippableItem item = new EquippableItem(
+                    elem["Name"].ToString(), 
+                    elem["Description"].ToString(),
+                    (EquippableItem.EquippableType)(int)elem["Type"]);
+
+                LoadFeatures(elem, item);
+                exuippableItems.Add(item);
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log("LoadUsableItemsListFromFile exeption: " + e);
+        }
     }
 
     private void LoadUsableItemsListFromFile(string path)
@@ -36,47 +56,53 @@ public class ItemsManager : MonoBehaviour
             foreach (JsonData elem in data["usable"])
             {
                 UsableItem item = new UsableItem(elem["Name"].ToString(), elem["Description"].ToString());
-                foreach (JsonData feature in elem["Features"])
-                {
-                    if (feature["Type"].Equals((int)Feature.FeatureTypes.Instant))
-                    {
-                        item.features.Add(new InstantStatModFeature(
-                            float.Parse(feature["Amount"].ToString()),
-                            (StatTypes)(int)feature["Stat"],
-                            Feature.FeatureTypes.Instant
-                            ));
-                        //TODO: czemu to nie dziala? przez enumy?
-                        //item.features.Add(JsonMapper.ToObject<InstantStatModFeature>(feature.ToString()));
-                        //TODO: solution?:
-                        //JsonMapper.RegisterExporter<float>((obj, writer) => writer.Write(Convert.ToDouble(obj)));
-                        //JsonMapper.RegisterImporter<double, float>(input => Convert.ToSingle(input));
-                    }
-                    else if (feature["Type"].Equals((int)Feature.FeatureTypes.Continues))
-                    {
-                        item.features.Add(new ContinuesStatModFeature(
-                            float.Parse(feature["Duration"].ToString()),
-                            float.Parse(feature["Interval"].ToString()),
-                            float.Parse(feature["Amount"].ToString()),
-                            (StatTypes)(int)feature["Stat"],
-                            Feature.FeatureTypes.Continues));
-                        //item.features.Add(JsonMapper.ToObject<ContinuesStatModFeature>(feature.ToString()));
-                    }
-                    else if (feature["Type"].Equals((int)Feature.FeatureTypes.Temp))
-                    {
-                        item.features.Add(new TempStatModFeature(
-                            float.Parse(feature["Duration"].ToString()),
-                            float.Parse(feature["Amount"].ToString()),
-                            (StatTypes)(int)feature["Stat"],
-                            Feature.FeatureTypes.Temp));
-                        //item.features.Add(JsonMapper.ToObject<TempStatModFeature>(feature.ToString()));
-                    }
-                }
+                
+                LoadFeatures(elem, item);
                 usableItems.Add(item);
             }
         }
         catch (Exception e)
         {
             Debug.Log("LoadUsableItemsListFromFile exeption: " + e);
+        }
+    }
+
+    private static void LoadFeatures(JsonData elem, Item item)
+    {
+        foreach (JsonData feature in elem["Features"])
+        {
+            if (feature["Type"].Equals((int)Feature.FeatureTypes.Instant))
+            {
+                item.features.Add(new InstantStatModFeature(
+                    float.Parse(feature["Amount"].ToString()),
+                    (StatTypes)(int)feature["Stat"],
+                    Feature.FeatureTypes.Instant
+                    ));
+                //TODO: czemu to nie dziala? przez enumy?
+                //item.features.Add(JsonMapper.ToObject<InstantStatModFeature>(feature.ToString()));
+                //TODO: solution?:
+                //JsonMapper.RegisterExporter<float>((obj, writer) => writer.Write(Convert.ToDouble(obj)));
+                //JsonMapper.RegisterImporter<double, float>(input => Convert.ToSingle(input));
+            }
+            else if (feature["Type"].Equals((int)Feature.FeatureTypes.Continues))
+            {
+                item.features.Add(new ContinuesStatModFeature(
+                    float.Parse(feature["Duration"].ToString()),
+                    float.Parse(feature["Interval"].ToString()),
+                    float.Parse(feature["Amount"].ToString()),
+                    (StatTypes)(int)feature["Stat"],
+                    Feature.FeatureTypes.Continues));
+                //item.features.Add(JsonMapper.ToObject<ContinuesStatModFeature>(feature.ToString()));
+            }
+            else if (feature["Type"].Equals((int)Feature.FeatureTypes.Temp))
+            {
+                item.features.Add(new TempStatModFeature(
+                    float.Parse(feature["Duration"].ToString()),
+                    float.Parse(feature["Amount"].ToString()),
+                    (StatTypes)(int)feature["Stat"],
+                    Feature.FeatureTypes.Temp));
+                //item.features.Add(JsonMapper.ToObject<TempStatModFeature>(feature.ToString()));
+            }
         }
     }
 }
