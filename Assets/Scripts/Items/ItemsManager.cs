@@ -8,8 +8,8 @@ public class ItemsManager : MonoBehaviour
 {
     private const string usableItemsJsonFile = "../ManicDragonInsurrection/Assets/Resources/JSON Files/Items/usable-items.json";
     private const string equippableItemsJsonFile = "../ManicDragonInsurrection/Assets/Resources/JSON Files/Items/equippable-items.json";
-    private List<UsableItem> usableItems = new List<UsableItem>();
-    private List<EquippableItem> exuippableItems = new List<EquippableItem>();
+    public List<UsableItem> usableItems = new List<UsableItem>();
+    public List<EquippableItem> exuippableItems = new List<EquippableItem>();
 
     void Awake()
     {
@@ -25,13 +25,13 @@ public class ItemsManager : MonoBehaviour
         {
             string json = File.ReadAllText(path);
             JsonData data = JsonMapper.ToObject(json);
-            //TODO: start from HERE:
             foreach (JsonData elem in data["equippable"])
             {
                 EquippableItem item = new EquippableItem(
                     elem["Name"].ToString(), 
                     elem["Description"].ToString(),
-                    (EquippableItem.EquippableType)(int)elem["Type"]);
+                    (EquippableItem.EquippableType)(int)elem["Type"],
+                    elem["SpritePath"].ToString());
 
                 LoadFeatures(elem, item);
                 exuippableItems.Add(item);
@@ -47,15 +47,15 @@ public class ItemsManager : MonoBehaviour
     {
         try
         {
-            //List<RankingRow> list = JsonMapper.ToObject<List<RankingRow>>(data["Ranking"].ToString());
-            //BuildingsLevel levels = JsonMapper.ToObject<BuildingsLevel>(data["Buildings"].ToString());
-            //data["album"]["name"]
             string json = File.ReadAllText(path);
             JsonData data = JsonMapper.ToObject(json);
 
             foreach (JsonData elem in data["usable"])
             {
-                UsableItem item = new UsableItem(elem["Name"].ToString(), elem["Description"].ToString());
+                UsableItem item = new UsableItem(
+                    elem["Name"].ToString(), 
+                    elem["Description"].ToString(),
+                    elem["SpritePath"].ToString());
                 
                 LoadFeatures(elem, item);
                 usableItems.Add(item);

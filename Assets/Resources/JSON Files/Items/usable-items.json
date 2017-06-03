@@ -3,6 +3,7 @@
 	{
 		"Name": "item01",
 		"Description": "empty",
+		"SpritePath": "sprite01.png",
 		"Features":[
 		{
 			"Type": 0,
@@ -14,6 +15,7 @@
 	{
 		"Name": "item02",
 		"Description": "empty",
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 1,
@@ -27,6 +29,7 @@
 	{
 		"Name": "item03",
 		"Description": "empty",
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 2,
@@ -39,6 +42,7 @@
 	{
 		"Name": "item04",
 		"Description": "empty",
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 0,
@@ -50,6 +54,7 @@
 	{
 		"Name": "item05",
 		"Description": "empty",
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 1,
@@ -63,6 +68,7 @@
 	{
 		"Name": "item06",
 		"Description": "empty",
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 2,
@@ -75,6 +81,7 @@
 	{
 		"Name": "item07",
 		"Description": "empty",
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 2,
@@ -93,6 +100,7 @@
 	{
 		"Name": "item08",
 		"Description": "empty",
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 2,
@@ -111,6 +119,7 @@
 	{
 		"Name": "item09",
 		"Description": "empty",
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 2,
@@ -123,6 +132,7 @@
 	{
 		"Name": "item10",
 		"Description": "empty",
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 2,

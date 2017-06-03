@@ -1,21 +1,25 @@
-﻿public class EquippableItem : Item {
+﻿using System;
+
+public class EquippableItem : Item {
     public enum EquippableType { Armor, Weapon }
     public EquippableType Type { get; set; }
 
-    public EquippableItem(string name, string description, EquippableType type) : base(name, description)
+    public EquippableItem(string name, string description, EquippableType type, string spritePath) : base(name, description, spritePath)
     {
         Type = type;
     }
-    public void Equip()
+    public void Equip(Player player)
     {
+        throw new NotImplementedException();
         foreach (var feature in features)
         {
             feature.Activate();
         }
     }
 
-    public void UnEquip()
+    public void UnEquip(Player player)
     {
+        throw new NotImplementedException();
         foreach (var feature in features)
         {
             feature.Deactivate();

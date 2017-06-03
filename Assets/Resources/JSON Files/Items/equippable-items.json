@@ -4,6 +4,7 @@
 		"Name": "armor01",
 		"Description": "empty",
 		"Type": 0,
+		"SpritePath": "sprite01.png",
 		"Features":[
 		{
 			"Type": 0,
@@ -16,6 +17,7 @@
 		"Name": "armor02",
 		"Description": "empty",
 		"Type": 0,
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 0,
@@ -28,6 +30,7 @@
 		"Name": "armor03",
 		"Description": "empty",
 		"Type": 0,	
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 0,
@@ -45,10 +48,16 @@
 		"Name": "weapon01",
 		"Description": "empty",
 		"Type": 1,
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 0,
 			"Stat": 2,
+			"Amount": 10
+		},
+		{
+			"Type": 0,
+			"Stat": 4,
 			"Amount": 10
 		}
 		]
@@ -57,10 +66,16 @@
 		"Name": "weapon02",
 		"Description": "empty",
 		"Type": 1,
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 0,
 			"Stat": 2,
+			"Amount": 20
+		},
+		{
+			"Type": 0,
+			"Stat": 4,
 			"Amount": 20
 		}
 		]
@@ -69,6 +84,7 @@
 		"Name": "weapon03",
 		"Description": "empty",
 		"Type": 1,
+		"SpritePath": "sprite01.png",
 		"Features": [
 		{
 			"Type": 0,
@@ -79,6 +95,11 @@
 			"Type": 0,
 			"Stat": 2,
 			"Amount": 10
+		},
+		{
+			"Type": 0,
+			"Stat": 4,
+			"Amount": 30
 		}
 		]
 	}
