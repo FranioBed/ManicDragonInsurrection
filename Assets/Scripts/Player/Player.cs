@@ -85,5 +85,11 @@ public class Player : MonoBehaviour
         //TODO:
         throw new NotImplementedException();
     }
+
+	public void GetDamage(float damage) {
+		//TODO: obniżyć obrażenia o armor
+		Health -= damage;
+	}
+
     //--------------------------------------------------------------------------------------------------------
 }

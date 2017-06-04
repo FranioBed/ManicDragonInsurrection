@@ -2,15 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PunchAttack : MonoBehaviour {
+public class PunchAttack : BaseAttackBehaviour {
 
-	// Use this for initialization
+	Coroutine fightCoroutine;
+
 	void Start () {
-		
+		myself.onStateChange.AddListener (HandleStateChange);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	void HandleStateChange() {
+		if (myself.state == Enemy.State.Fight) {
+			fightCoroutine = StartCoroutine (Fight());
+		} else if (fightCoroutine != null) {
+			StopCoroutine (fightCoroutine);
+		}
 	}
+
+	IEnumerator Fight() {
+		while (true) {
+			myself.player.GetDamage (GetRandomAttackPower ());
+			yield return new WaitForSeconds (attacksTimeOffset);
+		}
+	}
+
+	float GetRandomAttackPower() {
+		return Random.Range(minAttackPower, maxAttackPower);
+	}
+
 }

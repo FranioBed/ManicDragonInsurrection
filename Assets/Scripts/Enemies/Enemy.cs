@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour {
 	public float startHealth;
 	public float seesPlayesDistance;
 	public float attackDistance;
+
+	public UnityEvent onStateChange;
+
 	public State state {
 		get {
 			return _state;
 		}
 		set {
-			_state = value;
-			UpdateAnimator ();
+			if (_state != value) {
+				_state = value;
+				UpdateAnimator ();
+				onStateChange.Invoke ();
+			}
 		}
 	} 
 	private State _state;
