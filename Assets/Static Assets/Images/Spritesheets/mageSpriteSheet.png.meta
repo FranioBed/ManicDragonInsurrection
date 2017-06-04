@@ -1,0 +1,1146 @@
+fileFormatVersion: 2
+guid: 95ce1c0630e88434089398a632dc56eb
+timeCreated: 1496521844
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mageSpriteSheet_0
+    21300002: mageSpriteSheet_1
+    21300004: mageSpriteSheet_2
+    21300006: mageSpriteSheet_3
+    21300008: mageSpriteSheet_4
+    21300010: mageSpriteSheet_5
+    21300012: mageSpriteSheet_6
+    21300014: mageSpriteSheet_7
+    21300016: mageSpriteSheet_8
+    21300018: mageSpriteSheet_9
+    21300020: mageSpriteSheet_10
+    21300022: mageSpriteSheet_11
+    21300024: mageSpriteSheet_12
+    21300026: mageSpriteSheet_13
+    21300028: mageSpriteSheet_14
+    21300030: mageSpriteSheet_15
+    21300032: mageSpriteSheet_16
+    21300034: mageSpriteSheet_17
+    21300036: mageSpriteSheet_18
+    21300038: mageSpriteSheet_19
+    21300040: mageSpriteSheet_20
+    21300042: mageSpriteSheet_21
+    21300044: mageSpriteSheet_22
+    21300046: mageSpriteSheet_23
+    21300048: mageSpriteSheet_24
+    21300050: mageSpriteSheet_25
+    21300052: mageSpriteSheet_26
+    21300054: mageSpriteSheet_27
+    21300056: mageSpriteSheet_28
+    21300058: mageSpriteSheet_29
+    21300060: mageSpriteSheet_30
+    21300062: mageSpriteSheet_31
+    21300064: mageSpriteSheet_32
+    21300066: mageSpriteSheet_33
+    21300068: mageSpriteSheet_34
+    21300070: mageSpriteSheet_35
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: mageSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 474
+        width: 121
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55.5, y: 34}
+        - {x: 57.5, y: 36}
+        - {x: 60.5, y: 36}
+        - {x: 60.5, y: 52}
+        - {x: 59.5, y: 54}
+        - {x: 43.5, y: 53}
+        - {x: 35.5, y: 49}
+        - {x: 27.5, y: 23}
+        - {x: 34.5, y: 45}
+        - {x: 17.5, y: 56}
+        - {x: -10.5, y: 62}
+        - {x: -32.5, y: 62}
+        - {x: -51.5, y: 22}
+        - {x: -60.5, y: -11}
+        - {x: -60.5, y: -62}
+        - {x: 33.5, y: -62}
+        - {x: 60.5, y: -3}
+        - {x: 60.5, y: 36}
+        - {x: 58.5, y: 36}
+    - name: mageSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 474
+        width: 121
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58.5, y: 36}
+        - {x: 54.5, y: 34}
+        - {x: 57.5, y: 36}
+        - {x: 60.5, y: 36}
+        - {x: 60.5, y: 52}
+        - {x: 42.5, y: 56}
+        - {x: 35.5, y: 49}
+        - {x: 27.5, y: 28}
+        - {x: 32.5, y: 45}
+        - {x: 29.5, y: 47}
+        - {x: 18.5, y: 48}
+        - {x: -12.5, y: 62}
+        - {x: -31.5, y: 62}
+        - {x: -55.5, y: 10}
+        - {x: -60.5, y: -24}
+        - {x: -60.5, y: -60}
+        - {x: -53.5, y: -62}
+        - {x: 26.5, y: -62}
+        - {x: 36.5, y: -43}
+        - {x: 60.5, y: 9}
+        - {x: 60.5, y: 36}
+    - name: mageSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 474
+        width: 121
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57.5, y: 36}
+        - {x: 54.5, y: 34}
+        - {x: 57.5, y: 36}
+        - {x: 59.5, y: 36}
+        - {x: 60.5, y: 37}
+        - {x: 60.5, y: 49}
+        - {x: 58.5, y: 54}
+        - {x: 41.5, y: 54}
+        - {x: 37.5, y: 53}
+        - {x: 30.5, y: 36}
+        - {x: 26.5, y: 25}
+        - {x: 29.5, y: 37}
+        - {x: 33.5, y: 45}
+        - {x: 32.5, y: 51}
+        - {x: -11.5, y: 62}
+        - {x: -30.5, y: 62}
+        - {x: -49.5, y: 22}
+        - {x: -53.5, y: 11}
+        - {x: -60.5, y: -15}
+        - {x: -60.5, y: -62}
+        - {x: 33.5, y: -62}
+        - {x: 58.5, y: 5}
+        - {x: 60.5, y: 11}
+        - {x: 60.5, y: 36}
+    - name: mageSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 474
+        width: 121
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 56.5, y: 36}
+        - {x: 52.5, y: 32}
+        - {x: 55.5, y: 36}
+        - {x: 55.5, y: 39}
+        - {x: 57.5, y: 36}
+        - {x: 60.5, y: 36}
+        - {x: 60.5, y: 55}
+        - {x: 37.5, y: 57}
+        - {x: 32.5, y: 44}
+        - {x: 27.5, y: 25}
+        - {x: 31.5, y: 41}
+        - {x: 31.5, y: 43}
+        - {x: 30.5, y: 46}
+        - {x: 14.5, y: 62}
+        - {x: -28.5, y: 62}
+        - {x: -60.5, y: 37}
+        - {x: -60.5, y: -62}
+        - {x: 36.5, y: -62}
+        - {x: 60.5, y: 10}
+        - {x: 60.5, y: 36}
+    - name: mageSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 474
+        width: 120
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53, y: 32}
+        - {x: 54, y: 33}
+        - {x: 56, y: 39}
+        - {x: 59, y: 36}
+        - {x: 60, y: 36}
+        - {x: 60, y: 52}
+        - {x: 48, y: 57}
+        - {x: 40, y: 53}
+        - {x: 35, y: 47}
+        - {x: 32, y: 39}
+        - {x: 28, y: 26}
+        - {x: 32, y: 41}
+        - {x: 32, y: 43}
+        - {x: 31, y: 46}
+        - {x: 20, y: 47}
+        - {x: -8, y: 62}
+        - {x: -27, y: 62}
+        - {x: -49, y: 23}
+        - {x: -54, y: 11}
+        - {x: -60, y: -16}
+        - {x: -60, y: -62}
+        - {x: 38, y: -62}
+        - {x: 60, y: -9}
+        - {x: 60, y: 36}
+        - {x: 57, y: 36}
+    - name: mageSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 474
+        width: 120
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53, y: 32}
+        - {x: 54, y: 33}
+        - {x: 56, y: 39}
+        - {x: 59, y: 36}
+        - {x: 60, y: 36}
+        - {x: 60, y: 52}
+        - {x: 48, y: 57}
+        - {x: 40, y: 53}
+        - {x: 35, y: 47}
+        - {x: 32, y: 39}
+        - {x: 28, y: 26}
+        - {x: 32, y: 41}
+        - {x: 32, y: 43}
+        - {x: 31, y: 46}
+        - {x: 20, y: 47}
+        - {x: -8, y: 62}
+        - {x: -27, y: 62}
+        - {x: -49, y: 23}
+        - {x: -54, y: 11}
+        - {x: -60, y: -16}
+        - {x: -60, y: -62}
+        - {x: 38, y: -62}
+        - {x: 60, y: -9}
+        - {x: 60, y: 36}
+        - {x: 57, y: 36}
+    - name: mageSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 474
+        width: 121
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 56.5, y: 36}
+        - {x: 52.5, y: 32}
+        - {x: 55.5, y: 36}
+        - {x: 55.5, y: 39}
+        - {x: 57.5, y: 36}
+        - {x: 60.5, y: 36}
+        - {x: 60.5, y: 55}
+        - {x: 37.5, y: 57}
+        - {x: 32.5, y: 44}
+        - {x: 27.5, y: 25}
+        - {x: 31.5, y: 41}
+        - {x: 31.5, y: 43}
+        - {x: 30.5, y: 46}
+        - {x: 14.5, y: 62}
+        - {x: -28.5, y: 62}
+        - {x: -60.5, y: 37}
+        - {x: -60.5, y: -62}
+        - {x: 36.5, y: -62}
+        - {x: 60.5, y: 10}
+        - {x: 60.5, y: 36}
+    - name: mageSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 474
+        width: 121
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57.5, y: 36}
+        - {x: 54.5, y: 34}
+        - {x: 57.5, y: 36}
+        - {x: 59.5, y: 36}
+        - {x: 60.5, y: 37}
+        - {x: 60.5, y: 49}
+        - {x: 58.5, y: 54}
+        - {x: 41.5, y: 54}
+        - {x: 37.5, y: 53}
+        - {x: 30.5, y: 36}
+        - {x: 26.5, y: 25}
+        - {x: 29.5, y: 37}
+        - {x: 33.5, y: 45}
+        - {x: 32.5, y: 51}
+        - {x: -11.5, y: 62}
+        - {x: -30.5, y: 62}
+        - {x: -49.5, y: 22}
+        - {x: -53.5, y: 11}
+        - {x: -60.5, y: -15}
+        - {x: -60.5, y: -62}
+        - {x: 33.5, y: -62}
+        - {x: 58.5, y: 5}
+        - {x: 60.5, y: 11}
+        - {x: 60.5, y: 36}
+    - name: mageSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 474
+        width: 121
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58.5, y: 36}
+        - {x: 54.5, y: 34}
+        - {x: 57.5, y: 36}
+        - {x: 60.5, y: 36}
+        - {x: 60.5, y: 52}
+        - {x: 42.5, y: 56}
+        - {x: 35.5, y: 49}
+        - {x: 27.5, y: 28}
+        - {x: 32.5, y: 45}
+        - {x: 29.5, y: 47}
+        - {x: 18.5, y: 48}
+        - {x: -12.5, y: 62}
+        - {x: -31.5, y: 62}
+        - {x: -55.5, y: 10}
+        - {x: -60.5, y: -24}
+        - {x: -60.5, y: -60}
+        - {x: -53.5, y: -62}
+        - {x: 26.5, y: -62}
+        - {x: 36.5, y: -43}
+        - {x: 60.5, y: 9}
+        - {x: 60.5, y: 36}
+    - name: mageSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 308
+        width: 121
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 40.5, y: 52.5}
+        - {x: 35.5, y: 47.5}
+        - {x: 28.5, y: 27.5}
+        - {x: 29.5, y: 23.5}
+        - {x: 19.5, y: 10.5}
+        - {x: 34.5, y: 43.5}
+        - {x: 17.5, y: 54.5}
+        - {x: -8.5, y: 61.5}
+        - {x: -33.5, y: 61.5}
+        - {x: -52.5, y: 22.5}
+        - {x: -49.5, y: 7.5}
+        - {x: -60.5, y: -30.5}
+        - {x: -60.5, y: -61.5}
+        - {x: 40.5, y: -61.5}
+        - {x: 60.5, y: -7.5}
+        - {x: 60.5, y: 54.5}
+    - name: mageSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 307
+        width: 120
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 59, y: 37}
+        - {x: 60, y: 38}
+        - {x: 60, y: 50}
+        - {x: 58, y: 54}
+        - {x: 43, y: 55}
+        - {x: 38, y: 52}
+        - {x: 33, y: 43}
+        - {x: 31, y: 34}
+        - {x: 28, y: 29}
+        - {x: 28, y: 25}
+        - {x: 17, y: 28}
+        - {x: 32, y: 41}
+        - {x: 31, y: 47}
+        - {x: 9, y: 62}
+        - {x: -29, y: 62}
+        - {x: -60, y: 48}
+        - {x: -60, y: -62}
+        - {x: 36, y: -62}
+        - {x: 60, y: 15}
+        - {x: 60, y: 37}
+        - {x: 58, y: 37}
+    - name: mageSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 308
+        width: 119
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54.5, y: 35}
+        - {x: 56.5, y: 37}
+        - {x: 59.5, y: 37}
+        - {x: 59.5, y: 62}
+        - {x: 57.5, y: 62}
+        - {x: 30.5, y: 51}
+        - {x: 32.5, y: 43}
+        - {x: 32.5, y: 35}
+        - {x: 30.5, y: 35}
+        - {x: 27.5, y: 29}
+        - {x: 30.5, y: 35}
+        - {x: 32.5, y: 41}
+        - {x: 32.5, y: 43}
+        - {x: 31.5, y: 46}
+        - {x: 20.5, y: 47}
+        - {x: -7.5, y: 62}
+        - {x: -26.5, y: 62}
+        - {x: -59.5, y: 28}
+        - {x: -59.5, y: -62}
+        - {x: 49.5, y: -62}
+        - {x: 59.5, y: -57}
+        - {x: 59.5, y: 37}
+        - {x: 57.5, y: 37}
+    - name: mageSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 309
+        width: 118
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 49, y: 30.5}
+        - {x: 56, y: 37.5}
+        - {x: 59, y: 37.5}
+        - {x: 59, y: 61.5}
+        - {x: -28, y: 61.5}
+        - {x: -55, y: 8.5}
+        - {x: -59, y: -28.5}
+        - {x: -59, y: -60.5}
+        - {x: -58, y: -61.5}
+        - {x: 38, y: -61.5}
+        - {x: 59, y: 11.5}
+        - {x: 59, y: 37.5}
+        - {x: 55, y: 36.5}
+    - name: mageSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 309
+        width: 116
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 56, y: 38.5}
+        - {x: 51, y: 33.5}
+        - {x: 56, y: 38.5}
+        - {x: 58, y: 38.5}
+        - {x: 58, y: 61.5}
+        - {x: -38, y: 61.5}
+        - {x: -58, y: -15.5}
+        - {x: -58, y: -60.5}
+        - {x: -48, y: -61.5}
+        - {x: 35, y: -61.5}
+        - {x: 58, y: 3.5}
+        - {x: 58, y: 38.5}
+    - name: mageSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 308
+        width: 116
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 62}
+        - {x: -56, y: 11}
+        - {x: -58, y: -3}
+        - {x: -58, y: -62}
+        - {x: 37, y: -62}
+        - {x: 58, y: 11}
+        - {x: 58, y: 62}
+    - name: mageSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 307
+        width: 117
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54.5, y: 38.5}
+        - {x: 54.5, y: 41.5}
+        - {x: 56.5, y: 38.5}
+        - {x: 58.5, y: 38.5}
+        - {x: 58.5, y: 52.5}
+        - {x: 55.5, y: 55.5}
+        - {x: 40.5, y: 56.5}
+        - {x: 20.5, y: 62.5}
+        - {x: -35.5, y: 62.5}
+        - {x: -58.5, y: 1.5}
+        - {x: -58.5, y: -62.5}
+        - {x: 36.5, y: -62.5}
+        - {x: 58.5, y: -1.5}
+        - {x: 58.5, y: 38.5}
+    - name: mageSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 306
+        width: 119
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35.5, y: 54}
+        - {x: 32.5, y: 45}
+        - {x: 32.5, y: 37}
+        - {x: 30.5, y: 37}
+        - {x: 26.5, y: 30}
+        - {x: 32.5, y: 42}
+        - {x: 32.5, y: 44}
+        - {x: 31.5, y: 47}
+        - {x: 20.5, y: 48}
+        - {x: -7.5, y: 63}
+        - {x: -26.5, y: 63}
+        - {x: -59.5, y: 13}
+        - {x: -59.5, y: -62}
+        - {x: -54.5, y: -63}
+        - {x: 37.5, y: -63}
+        - {x: 59.5, y: -20}
+        - {x: 59.5, y: 57}
+        - {x: 57.5, y: 60}
+    - name: mageSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 307
+        width: 120
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52, y: 32}
+        - {x: 54, y: 35}
+        - {x: 57, y: 37}
+        - {x: 60, y: 37}
+        - {x: 60, y: 52}
+        - {x: 59, y: 56}
+        - {x: 43, y: 54}
+        - {x: 38, y: 52}
+        - {x: 33, y: 43}
+        - {x: 26, y: 29}
+        - {x: 34, y: 45}
+        - {x: 31, y: 47}
+        - {x: 20, y: 48}
+        - {x: -8, y: 62}
+        - {x: -28, y: 62}
+        - {x: -57, y: 9}
+        - {x: -60, y: -1}
+        - {x: -60, y: -61}
+        - {x: -59, y: -62}
+        - {x: 35, y: -62}
+        - {x: 60, y: 19}
+        - {x: 60, y: 37}
+        - {x: 58, y: 37}
+    - name: mageSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 152
+        width: 121
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 59.5, y: 36.5}
+        - {x: 60.5, y: 37.5}
+        - {x: 60.5, y: 50.5}
+        - {x: 58.5, y: 53.5}
+        - {x: 42.5, y: 56.5}
+        - {x: 30.5, y: 41.5}
+        - {x: 28.5, y: 23.5}
+        - {x: 26.5, y: 38.5}
+        - {x: 30.5, y: 41.5}
+        - {x: 29.5, y: 47.5}
+        - {x: 22.5, y: 48.5}
+        - {x: -9.5, y: 62.5}
+        - {x: -28.5, y: 62.5}
+        - {x: -51.5, y: 22.5}
+        - {x: -49.5, y: 10.5}
+        - {x: -60.5, y: -9.5}
+        - {x: -60.5, y: -62.5}
+        - {x: 30.5, y: -62.5}
+        - {x: 60.5, y: 9.5}
+        - {x: 60.5, y: 35.5}
+        - {x: 57.5, y: 35.5}
+    - name: mageSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 152
+        width: 118
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53, y: 36.5}
+        - {x: 56, y: 38.5}
+        - {x: 59, y: 38.5}
+        - {x: 59, y: 61.5}
+        - {x: 35, y: 54.5}
+        - {x: 33, y: 47.5}
+        - {x: 30, y: 36.5}
+        - {x: 26, y: 29.5}
+        - {x: 32, y: 42.5}
+        - {x: 31, y: 45.5}
+        - {x: 30, y: 47.5}
+        - {x: 18, y: 62.5}
+        - {x: -35, y: 62.5}
+        - {x: -59, y: 45.5}
+        - {x: -59, y: -62.5}
+        - {x: 42, y: -62.5}
+        - {x: 59, y: -9.5}
+        - {x: 59, y: 38.5}
+        - {x: 57, y: 38.5}
+    - name: mageSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 152
+        width: 114
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 51, y: 37.5}
+        - {x: 54, y: 41.5}
+        - {x: 56, y: 41.5}
+        - {x: 57, y: 42.5}
+        - {x: 57, y: 53.5}
+        - {x: 54, y: 58.5}
+        - {x: 38, y: 58.5}
+        - {x: -3, y: 62.5}
+        - {x: -30, y: 62.5}
+        - {x: -57, y: 28.5}
+        - {x: -57, y: -62.5}
+        - {x: 47, y: -62.5}
+        - {x: 57, y: -33.5}
+        - {x: 57, y: 41.5}
+        - {x: 55, y: 41.5}
+    - name: mageSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 152
+        width: 111
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 48.5, y: 38.5}
+        - {x: 46.5, y: 35.5}
+        - {x: 48.5, y: 37.5}
+        - {x: 50.5, y: 42.5}
+        - {x: 52.5, y: 43.5}
+        - {x: 54.5, y: 43.5}
+        - {x: 55.5, y: 44.5}
+        - {x: 55.5, y: 54.5}
+        - {x: 50.5, y: 60.5}
+        - {x: 27.5, y: 62.5}
+        - {x: -30.5, y: 62.5}
+        - {x: -55.5, y: 28.5}
+        - {x: -55.5, y: -62.5}
+        - {x: 43.5, y: -62.5}
+        - {x: 55.5, y: -12.5}
+        - {x: 55.5, y: 43.5}
+        - {x: 53.5, y: 43.5}
+    - name: mageSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 152
+        width: 108
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54, y: 46}
+        - {x: 51, y: 46}
+        - {x: 48, y: 43}
+        - {x: 50, y: 46}
+        - {x: 52, y: 46}
+        - {x: 54, y: 48}
+        - {x: 54, y: 56}
+        - {x: 52, y: 62}
+        - {x: -30, y: 62}
+        - {x: -54, y: 46}
+        - {x: -54, y: -62}
+        - {x: 28, y: -62}
+        - {x: 42, y: -55}
+        - {x: 47, y: -36}
+        - {x: 54, y: 2}
+    - name: mageSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 152
+        width: 108
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 51, y: 46}
+        - {x: 48, y: 43}
+        - {x: 50, y: 46}
+        - {x: 52, y: 46}
+        - {x: 54, y: 48}
+        - {x: 54, y: 56}
+        - {x: 52, y: 62}
+        - {x: -30, y: 62}
+        - {x: -54, y: 46}
+        - {x: -54, y: -62}
+        - {x: 44, y: -62}
+        - {x: 54, y: -45}
+        - {x: 54, y: 46}
+    - name: mageSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 152
+        width: 111
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53.5, y: 43.5}
+        - {x: 55.5, y: 43.5}
+        - {x: 55.5, y: 56.5}
+        - {x: 53.5, y: 62.5}
+        - {x: -42.5, y: 62.5}
+        - {x: -55.5, y: -6.5}
+        - {x: -55.5, y: -62.5}
+        - {x: 42.5, y: -62.5}
+        - {x: 55.5, y: 10.5}
+        - {x: 55.5, y: 43.5}
+    - name: mageSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 152
+        width: 114
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57, y: 41.5}
+        - {x: 57, y: 62.5}
+        - {x: -47, y: 62.5}
+        - {x: -57, y: 40.5}
+        - {x: -57, y: -62.5}
+        - {x: 50, y: -62.5}
+        - {x: 57, y: 5.5}
+        - {x: 57, y: 41.5}
+        - {x: 55, y: 41.5}
+    - name: mageSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 152
+        width: 118
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54, y: 36.5}
+        - {x: 56, y: 38.5}
+        - {x: 59, y: 38.5}
+        - {x: 59, y: 52.5}
+        - {x: 56, y: 56.5}
+        - {x: 41, y: 56.5}
+        - {x: 37, y: 52.5}
+        - {x: 33, y: 47.5}
+        - {x: 30, y: 36.5}
+        - {x: 27, y: 29.5}
+        - {x: 32, y: 42.5}
+        - {x: 31, y: 45.5}
+        - {x: 29, y: 53.5}
+        - {x: -8, y: 62.5}
+        - {x: -33, y: 62.5}
+        - {x: -52, y: 19.5}
+        - {x: -51, y: 12.5}
+        - {x: -59, y: -22.5}
+        - {x: -59, y: -62.5}
+        - {x: 42, y: -62.5}
+        - {x: 59, y: -9.5}
+        - {x: 59, y: 38.5}
+        - {x: 57, y: 38.5}
+    - name: mageSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 13
+        width: 121
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: -62}
+        - {x: 25.5, y: -62}
+        - {x: 37.5, y: -43}
+        - {x: 60.5, y: 0}
+        - {x: 60.5, y: 54}
+        - {x: 42.5, y: 54}
+        - {x: 35.5, y: 47}
+        - {x: 28.5, y: 24}
+        - {x: 33.5, y: 45}
+        - {x: 27.5, y: 49}
+        - {x: -9.5, y: 62}
+        - {x: -33.5, y: 62}
+        - {x: -55.5, y: 9}
+        - {x: -60.5, y: -21}
+        - {x: -60.5, y: -60}
+        - {x: -50.5, y: -62}
+        - {x: -9.5, y: -62}
+        - {x: -8.5, y: -60}
+        - {x: -8.5, y: -57}
+        - {x: -8.5, y: -59}
+    - name: mageSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 12
+        width: 118
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34, y: 56.5}
+        - {x: 26, y: 26.5}
+        - {x: 31, y: 44.5}
+        - {x: 32, y: 53.5}
+        - {x: 10, y: 62.5}
+        - {x: -35, y: 62.5}
+        - {x: -59, y: 38.5}
+        - {x: -59, y: -62.5}
+        - {x: 33, y: -62.5}
+        - {x: 59, y: 2.5}
+        - {x: 59, y: 56.5}
+        - {x: 57, y: 60.5}
+    - name: mageSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 13
+        width: 114
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55, y: 41.5}
+        - {x: 57, y: 41.5}
+        - {x: 57, y: 61.5}
+        - {x: 55, y: 61.5}
+        - {x: 31, y: 57.5}
+        - {x: 24, y: 32.5}
+        - {x: 26, y: 54.5}
+        - {x: 21, y: 57.5}
+        - {x: -6, y: 61.5}
+        - {x: -38, y: 61.5}
+        - {x: -39, y: 54.5}
+        - {x: -55, y: 16.5}
+        - {x: -50, y: 4.5}
+        - {x: -40, y: 7.5}
+        - {x: -57, y: -45.5}
+        - {x: -57, y: -61.5}
+        - {x: 41, y: -61.5}
+        - {x: 57, y: 12.5}
+        - {x: 57, y: 41.5}
+    - name: mageSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 12
+        width: 110
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53, y: 45}
+        - {x: 55, y: 45}
+        - {x: 55, y: 58}
+        - {x: 54, y: 60}
+        - {x: 54, y: 61}
+        - {x: 29, y: 61}
+        - {x: 22, y: 30}
+        - {x: 23, y: 57}
+        - {x: 14, y: 61}
+        - {x: -49, y: 61}
+        - {x: -55, y: 24}
+        - {x: -55, y: 5}
+        - {x: -50, y: 2}
+        - {x: -55, y: -28}
+        - {x: -55, y: -61}
+        - {x: 33, y: -61}
+        - {x: 55, y: 8}
+        - {x: 55, y: 45}
+    - name: mageSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 12
+        width: 107
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46.5, y: 42.5}
+        - {x: 47.5, y: 43.5}
+        - {x: 48.5, y: 46.5}
+        - {x: 50.5, y: 47.5}
+        - {x: 52.5, y: 47.5}
+        - {x: 53.5, y: 48.5}
+        - {x: 53.5, y: 57.5}
+        - {x: 51.5, y: 61.5}
+        - {x: 26.5, y: 61.5}
+        - {x: 18.5, y: 52.5}
+        - {x: 23.5, y: 61.5}
+        - {x: -47.5, y: 61.5}
+        - {x: -53.5, y: 27.5}
+        - {x: -53.5, y: -61.5}
+        - {x: 36.5, y: -61.5}
+        - {x: 53.5, y: 14.5}
+        - {x: 53.5, y: 47.5}
+        - {x: 51.5, y: 47.5}
+    - name: mageSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 12
+        width: 107
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46.5, y: 42.5}
+        - {x: 47.5, y: 43.5}
+        - {x: 48.5, y: 46.5}
+        - {x: 50.5, y: 47.5}
+        - {x: 53.5, y: 47.5}
+        - {x: 53.5, y: 58.5}
+        - {x: 52.5, y: 61.5}
+        - {x: 26.5, y: 61.5}
+        - {x: 20.5, y: 35.5}
+        - {x: 13.5, y: 61.5}
+        - {x: -29.5, y: 61.5}
+        - {x: -49.5, y: 59.5}
+        - {x: -53.5, y: 59.5}
+        - {x: -53.5, y: -61.5}
+        - {x: 35.5, y: -61.5}
+        - {x: 53.5, y: 9.5}
+        - {x: 53.5, y: 47.5}
+        - {x: 51.5, y: 47.5}
+    - name: mageSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 12
+        width: 110
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 63}
+        - {x: 24, y: 29}
+        - {x: 4, y: 63}
+        - {x: -10, y: 63}
+        - {x: -55, y: 53}
+        - {x: -55, y: 11}
+        - {x: -49, y: -10}
+        - {x: -45, y: -7}
+        - {x: -42, y: -5}
+        - {x: -37, y: 0}
+        - {x: -40, y: -4}
+        - {x: -41, y: -8}
+        - {x: -46, y: -26}
+        - {x: -55, y: -52}
+        - {x: -55, y: -63}
+        - {x: 37, y: -63}
+        - {x: 55, y: -10}
+        - {x: 55, y: 61}
+        - {x: 46, y: 63}
+    - name: mageSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 13
+        width: 114
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 49, y: 37}
+        - {x: 52, y: 41}
+        - {x: 54, y: 42}
+        - {x: 57, y: 42}
+        - {x: 57, y: 56}
+        - {x: 55, y: 61}
+        - {x: 48, y: 61}
+        - {x: 44, y: 60}
+        - {x: 32, y: 58}
+        - {x: 23, y: 28}
+        - {x: 14, y: 61}
+        - {x: -50, y: 61}
+        - {x: -57, y: 53}
+        - {x: -57, y: 27}
+        - {x: -52, y: -13}
+        - {x: -38, y: 2}
+        - {x: -35, y: 7}
+        - {x: -40, y: -1}
+        - {x: -50, y: -26}
+        - {x: -57, y: -51}
+        - {x: -57, y: -61}
+        - {x: 29, y: -61}
+        - {x: 57, y: -48}
+        - {x: 57, y: 42}
+        - {x: 53, y: 41}
+    - name: mageSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 12
+        width: 118
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 56, y: 40}
+        - {x: 59, y: 40}
+        - {x: 59, y: 55}
+        - {x: 56, y: 59}
+        - {x: 34, y: 58}
+        - {x: 26, y: 28}
+        - {x: 28, y: 59}
+        - {x: 24, y: 61}
+        - {x: -41, y: 61}
+        - {x: -59, y: 28}
+        - {x: -59, y: 9}
+        - {x: -49, y: 6}
+        - {x: -41, y: 7}
+        - {x: -54, y: -19}
+        - {x: -59, y: -38}
+        - {x: -59, y: -59}
+        - {x: -44, y: -61}
+        - {x: 33, y: -61}
+        - {x: 59, y: 15}
+        - {x: 59, y: 40}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
