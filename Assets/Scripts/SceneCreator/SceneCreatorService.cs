@@ -15,12 +15,12 @@ namespace Assets.Scripts.SceneCreator
         [Inject]
         LevelItemMarker _itemsMarker;
 
-        public IEnumerable<Marker> Create(LevelInfo levelInfo)
+        public IList<Marker> Create(LevelInfo levelInfo)
         {
             cleanUp();
             _tilesSpawner.spawn(levelInfo.tiles);
             _itemsSpawner.spawn(levelInfo.itemsOnTiles);
-            IEnumerable<Marker> markers = _itemsMarker.getMarkers(levelInfo.itemsOnTiles);
+            IList<Marker> markers = _itemsMarker.getMarkers(levelInfo.itemsOnTiles);
             return markers;
         }
         

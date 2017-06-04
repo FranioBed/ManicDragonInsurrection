@@ -3,6 +3,10 @@ using Assets.Scripts.SceneCreator;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 public class GameManager : MonoBehaviour { 
     [Inject]
@@ -15,6 +19,8 @@ public class GameManager : MonoBehaviour {
     //anything that somes to mind...
     [Inject]
     SettingsInstaller.GameSettings _settings;
+    [Inject]
+    SettingsInstaller.PrefabsConfig _prefabSettings;
 
     public GameObject playerPrefab;
 
@@ -25,7 +31,16 @@ public class GameManager : MonoBehaviour {
     {
         seed = setSeed();
         LevelInfo levelInfo = _levelGeneratorSerivce.generate(seed);
-        IEnumerable<Marker> markers = _sceneCreatorService.Create(levelInfo);
+        IList<Marker> markers = _sceneCreatorService.Create(levelInfo);
+        setPlayerToStartPos(markers);
+    }
+
+    private void setPlayerToStartPos(IList<Marker> markers) //TODO: extract to another class (single-responsibility rule)
+    {
+        Marker startPos = markers.Where<Marker>(m => ItemOnTileEnum.STARTPOS.Equals(m.itemType)).First();
+        float posX = startPos.position.x * _prefabSettings.tileSpan;
+        float posY = -startPos.position.y * _prefabSettings.tileSpan;
+        playerPrefab.transform.Translate(new Vector3(posX, posY, 0.0f));
     }
 
     private int setSeed()
