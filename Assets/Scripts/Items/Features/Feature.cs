@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class Feature
+public abstract class Feature : MonoBehaviour
 {
     public enum FeatureTypes { Instant, Continues, Temp }
     public float Amount { get; set; }
@@ -14,6 +14,6 @@ public abstract class Feature
         this.Type = type;
     }
 
-    public virtual void Activate() { }
-    public virtual void Deactivate() { }
+    public virtual void Activate(Player player) { }
+    public virtual void Deactivate(Player player) { }
 }

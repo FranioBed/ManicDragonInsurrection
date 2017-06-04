@@ -11,10 +11,10 @@ public class UsableItem : Item
     public void OnUse(Player player)
     {
         IsUsed = true;
-        throw new NotImplementedException();
+        
         foreach (var feature in features)
         {
-            feature.Activate();
+            feature.Activate(player);
         }
     }
 }
