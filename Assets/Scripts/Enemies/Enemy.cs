@@ -6,19 +6,23 @@ public class Enemy : MonoBehaviour {
 	public float startHealth;
 	public float seesPlayesDistance;
 	public float attackDistance;
+	public State state {
+		get {
+			return _state;
+		}
+		set {
+			_state = value;
+			UpdateAnimator ();
+		}
+	} 
+	private State _state;
 
 	public float health { get; private set;}
-	public State state;
+	public Player player { get; private set; }
 
 	private AnimationController myAnimationController;
-	private Rigidbody2D rb2d;
-	private Player player;
-	private BaseWalkingBehaviour walkingBehaviour;
-	private BaseAttackBehaviour attackBehaviour;
-
 
 	void Awake() {
-		rb2d = GetComponent<Rigidbody2D> ();
 		myAnimationController = GetComponent<AnimationController> ();
 		health = startHealth;	
 		state = State.Idle;
@@ -57,6 +61,18 @@ public class Enemy : MonoBehaviour {
 	float CalculateDistanceToPlayer() {
 		return (player.transform.position - transform.position).magnitude;
 		
+	}
+
+	void UpdateAnimator() {
+		if (state == State.Idle) {
+			myAnimationController.SetAnimationState (AnimationState.IDLE);
+		} else if (state == State.WalkToPlayer) {
+			myAnimationController.SetAnimationState (AnimationState.WALK);
+		} else if (state == State.Fight) {
+			myAnimationController.SetAnimationState (AnimationState.FIGHT);
+		} else if (state == State.Dead) {
+			myAnimationController.SetAnimationState (AnimationState.DIE);
+		}
 	}
 
 	public enum State {

@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseWalkingBehaviour : MonoBehaviour {
+public abstract class BaseWalkingBehaviour : MonoBehaviour {
+	public float walkingSpeed;
+	protected Enemy myself;
+	protected Rigidbody2D rb2d;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public void Awake() {
+		myself = GetComponent<Enemy> ();
+		rb2d = GetComponent<Rigidbody2D> ();
 	}
 }

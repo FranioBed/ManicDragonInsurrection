@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleWalkTowardsPlayer : MonoBehaviour {
+public class SimpleWalkTowardsPlayer : BaseWalkingBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () {
+		if (myself.state == Enemy.State.WalkToPlayer) {
+			Vector2 direction = (myself.player.transform.position - myself.transform.position).normalized;
+			rb2d.velocity = direction.normalized * walkingSpeed;
+		}
 	}
 }
