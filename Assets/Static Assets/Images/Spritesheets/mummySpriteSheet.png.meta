@@ -1,0 +1,776 @@
+fileFormatVersion: 2
+guid: 3f297c9eda6444e4b8a19ae8825569d1
+timeCreated: 1496581320
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mummySpriteSheet_0
+    21300002: mummySpriteSheet_1
+    21300004: mummySpriteSheet_2
+    21300006: mummySpriteSheet_3
+    21300008: mummySpriteSheet_4
+    21300010: mummySpriteSheet_5
+    21300012: mummySpriteSheet_6
+    21300014: mummySpriteSheet_7
+    21300016: mummySpriteSheet_8
+    21300018: mummySpriteSheet_9
+    21300020: mummySpriteSheet_10
+    21300022: mummySpriteSheet_11
+    21300024: mummySpriteSheet_12
+    21300026: mummySpriteSheet_13
+    21300028: mummySpriteSheet_14
+    21300030: mummySpriteSheet_15
+    21300032: mummySpriteSheet_16
+    21300034: mummySpriteSheet_17
+    21300036: mummySpriteSheet_18
+    21300038: mummySpriteSheet_19
+    21300040: mummySpriteSheet_20
+    21300042: mummySpriteSheet_21
+    21300044: mummySpriteSheet_22
+    21300046: mummySpriteSheet_23
+    21300048: mummySpriteSheet_24
+    21300050: mummySpriteSheet_25
+    21300052: mummySpriteSheet_26
+    21300054: mummySpriteSheet_27
+    21300056: mummySpriteSheet_28
+    21300058: mummySpriteSheet_29
+    21300060: mummySpriteSheet_30
+    21300062: mummySpriteSheet_31
+    21300064: mummySpriteSheet_32
+    21300066: mummySpriteSheet_33
+    21300068: mummySpriteSheet_34
+    21300070: mummySpriteSheet_35
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: mummySpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 390
+        width: 56
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 47.5}
+        - {x: -28, y: 45.5}
+        - {x: -28, y: -36.5}
+        - {x: -18, y: -47.5}
+        - {x: 28, y: -47.5}
+        - {x: 28, y: 24.5}
+        - {x: 22, y: 47.5}
+    - name: mummySpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 390
+        width: 57
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 47.5}
+        - {x: -28.5, y: 38.5}
+        - {x: -28.5, y: -16.5}
+        - {x: -25.5, y: -31.5}
+        - {x: -17.5, y: -47.5}
+        - {x: 28.5, y: -47.5}
+        - {x: 28.5, y: 28.5}
+        - {x: 20.5, y: 47.5}
+    - name: mummySpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 390
+        width: 57
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 47.5}
+        - {x: -28.5, y: 38.5}
+        - {x: -28.5, y: -26.5}
+        - {x: -21.5, y: -47.5}
+        - {x: 28.5, y: -47.5}
+        - {x: 28.5, y: 42.5}
+        - {x: 15.5, y: 47.5}
+    - name: mummySpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 390
+        width: 56
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 47.5}
+        - {x: -28, y: 38.5}
+        - {x: -28, y: -22.5}
+        - {x: -21, y: -46.5}
+        - {x: -19, y: -47.5}
+        - {x: 28, y: -47.5}
+        - {x: 28, y: 29.5}
+        - {x: 17, y: 47.5}
+    - name: mummySpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 390
+        width: 56
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 48}
+        - {x: -28, y: -48}
+        - {x: 28, y: -48}
+        - {x: 28, y: 48}
+    - name: mummySpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 390
+        width: 56
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 48}
+        - {x: -28, y: -48}
+        - {x: 28, y: -48}
+        - {x: 28, y: 48}
+    - name: mummySpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 390
+        width: 56
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 47.5}
+        - {x: -28, y: 38.5}
+        - {x: -28, y: -22.5}
+        - {x: -21, y: -46.5}
+        - {x: -19, y: -47.5}
+        - {x: 28, y: -47.5}
+        - {x: 28, y: 29.5}
+        - {x: 17, y: 47.5}
+    - name: mummySpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 390
+        width: 57
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 47.5}
+        - {x: -28.5, y: 38.5}
+        - {x: -28.5, y: -26.5}
+        - {x: -21.5, y: -47.5}
+        - {x: 28.5, y: -47.5}
+        - {x: 28.5, y: 42.5}
+        - {x: 15.5, y: 47.5}
+    - name: mummySpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 390
+        width: 57
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 47.5}
+        - {x: -28.5, y: 38.5}
+        - {x: -28.5, y: -16.5}
+        - {x: -25.5, y: -31.5}
+        - {x: -17.5, y: -47.5}
+        - {x: 28.5, y: -47.5}
+        - {x: 28.5, y: 28.5}
+        - {x: 20.5, y: 47.5}
+    - name: mummySpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 281
+        width: 73
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.5, y: -27}
+        - {x: 36.5, y: 8}
+        - {x: 11.5, y: 47}
+        - {x: -27.5, y: 47}
+        - {x: -36.5, y: 45}
+        - {x: -36.5, y: -44}
+        - {x: -33.5, y: -47}
+        - {x: -19.5, y: -47}
+        - {x: -17.5, y: -42}
+        - {x: -5.5, y: -47}
+        - {x: 32.5, y: -47}
+    - name: mummySpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 280
+        width: 73
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 48}
+        - {x: -36.5, y: 35}
+        - {x: -36.5, y: -35}
+        - {x: -35.5, y: -46}
+        - {x: -33.5, y: -48}
+        - {x: 35.5, y: -48}
+        - {x: 36.5, y: -47}
+        - {x: 36.5, y: 19}
+        - {x: 9.5, y: 48}
+    - name: mummySpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 280
+        width: 73
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: 48}
+        - {x: -36.5, y: 46}
+        - {x: -36.5, y: -11}
+        - {x: -31.5, y: -48}
+        - {x: 22.5, y: -48}
+        - {x: 36.5, y: -12}
+        - {x: 36.5, y: 8}
+        - {x: 16.5, y: 48}
+    - name: mummySpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 281
+        width: 75
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32.5, y: 7.5}
+        - {x: 13.5, y: 47.5}
+        - {x: -23.5, y: 47.5}
+        - {x: -37.5, y: 34.5}
+        - {x: -37.5, y: 20.5}
+        - {x: -36.5, y: 17.5}
+        - {x: -26.5, y: -44.5}
+        - {x: -22.5, y: -47.5}
+        - {x: 5.5, y: -47.5}
+        - {x: 8.5, y: -40.5}
+        - {x: 37.5, y: -8.5}
+        - {x: 37.5, y: 2.5}
+    - name: mummySpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 281
+        width: 76
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37, y: 47}
+        - {x: -38, y: 47}
+        - {x: -38, y: -1}
+        - {x: -31, y: -47}
+        - {x: 1, y: -47}
+        - {x: 5, y: -46}
+        - {x: 3, y: -39}
+        - {x: 38, y: -25}
+        - {x: 38, y: 44}
+    - name: mummySpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 280
+        width: 76
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: 47.5}
+        - {x: -38, y: -2.5}
+        - {x: -30, y: -47.5}
+        - {x: 10, y: -47.5}
+        - {x: 38, y: -1.5}
+        - {x: 38, y: 21.5}
+        - {x: 8, y: 47.5}
+    - name: mummySpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 280
+        width: 76
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 38}
+        - {x: 6, y: 48}
+        - {x: -22, y: 48}
+        - {x: -37, y: 41}
+        - {x: -38, y: 40}
+        - {x: -38, y: -16}
+        - {x: -29, y: -48}
+        - {x: 18, y: -48}
+        - {x: 38, y: -18}
+        - {x: 38, y: 12}
+        - {x: 36, y: 15}
+    - name: mummySpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 280
+        width: 75
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37.5, y: -29}
+        - {x: 37.5, y: 16}
+        - {x: 20.5, y: 44}
+        - {x: 9.5, y: 48}
+        - {x: -30.5, y: 48}
+        - {x: -37.5, y: 39}
+        - {x: -37.5, y: -12}
+        - {x: -33.5, y: -45}
+        - {x: -26.5, y: -48}
+        - {x: -12.5, y: -48}
+        - {x: -10.5, y: -43}
+        - {x: -5.5, y: -48}
+        - {x: 22.5, y: -48}
+    - name: mummySpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 280
+        width: 75
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.5, y: 48}
+        - {x: -37.5, y: 45}
+        - {x: -37.5, y: -48}
+        - {x: 37.5, y: -48}
+        - {x: 37.5, y: 18}
+        - {x: 7.5, y: 48}
+    - name: mummySpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 166
+        width: 51
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.5, y: 47.5}
+        - {x: -25.5, y: 37.5}
+        - {x: -25.5, y: -33.5}
+        - {x: -19.5, y: -47.5}
+        - {x: 23.5, y: -47.5}
+        - {x: 25.5, y: -42.5}
+        - {x: 25.5, y: 39.5}
+        - {x: 16.5, y: 47.5}
+    - name: mummySpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 166
+        width: 69
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 47.5}
+        - {x: -34.5, y: 33.5}
+        - {x: -34.5, y: -11.5}
+        - {x: -23.5, y: -47.5}
+        - {x: 26.5, y: -47.5}
+        - {x: 34.5, y: -20.5}
+        - {x: 34.5, y: 4.5}
+        - {x: 12.5, y: 47.5}
+    - name: mummySpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 166
+        width: 78
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39, y: 30.5}
+        - {x: 19, y: 47.5}
+        - {x: -39, y: 47.5}
+        - {x: -39, y: -31.5}
+        - {x: -34, y: -47.5}
+        - {x: 17, y: -47.5}
+        - {x: 31, y: -28.5}
+        - {x: 39, y: -16.5}
+    - name: mummySpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 166
+        width: 79
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: 47.5}
+        - {x: -29.5, y: 47.5}
+        - {x: -39.5, y: 44.5}
+        - {x: -39.5, y: -27.5}
+        - {x: -27.5, y: -47.5}
+        - {x: 16.5, y: -47.5}
+        - {x: 27.5, y: -27.5}
+        - {x: 39.5, y: -4.5}
+        - {x: 39.5, y: 34.5}
+    - name: mummySpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 166
+        width: 77
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26.5, y: 47.5}
+        - {x: -38.5, y: 47.5}
+        - {x: -38.5, y: -40.5}
+        - {x: -28.5, y: -47.5}
+        - {x: 26.5, y: -47.5}
+        - {x: 38.5, y: 9.5}
+        - {x: 38.5, y: 41.5}
+    - name: mummySpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 166
+        width: 77
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: 47.5}
+        - {x: -38.5, y: 38.5}
+        - {x: -38.5, y: -29.5}
+        - {x: -26.5, y: -47.5}
+        - {x: 22.5, y: -47.5}
+        - {x: 38.5, y: 4.5}
+        - {x: 38.5, y: 41.5}
+        - {x: 12.5, y: 47.5}
+    - name: mummySpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 166
+        width: 79
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39.5, y: 47.5}
+        - {x: -39.5, y: 47.5}
+        - {x: -39.5, y: -42.5}
+        - {x: -30.5, y: -47.5}
+        - {x: 16.5, y: -47.5}
+        - {x: 13.5, y: -37.5}
+        - {x: 39.5, y: 4.5}
+    - name: mummySpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 166
+        width: 78
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 47.5}
+        - {x: -27, y: 47.5}
+        - {x: -39, y: 40.5}
+        - {x: -39, y: -21.5}
+        - {x: -27, y: -47.5}
+        - {x: 24, y: -47.5}
+        - {x: 39, y: -16.5}
+        - {x: 39, y: 10.5}
+        - {x: 6, y: 46.5}
+    - name: mummySpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 166
+        width: 69
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 47.5}
+        - {x: -20.5, y: 47.5}
+        - {x: -34.5, y: 42.5}
+        - {x: -34.5, y: -14.5}
+        - {x: -27.5, y: -47.5}
+        - {x: 27.5, y: -47.5}
+        - {x: 34.5, y: -32.5}
+        - {x: 34.5, y: 4.5}
+        - {x: 28.5, y: 25.5}
+    - name: mummySpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 38
+        width: 57
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.5, y: 47.5}
+        - {x: -28.5, y: 46.5}
+        - {x: -28.5, y: -11.5}
+        - {x: -23.5, y: -47.5}
+        - {x: 27.5, y: -47.5}
+        - {x: 28.5, y: -45.5}
+        - {x: 28.5, y: 23.5}
+        - {x: 19.5, y: 47.5}
+    - name: mummySpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 38
+        width: 58
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 47.5}
+        - {x: -29, y: 42.5}
+        - {x: -29, y: -10.5}
+        - {x: -21, y: -47.5}
+        - {x: 29, y: -47.5}
+        - {x: 29, y: 37.5}
+        - {x: 20, y: 47.5}
+    - name: mummySpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 38
+        width: 58
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 47.5}
+        - {x: -29, y: 39.5}
+        - {x: -29, y: -12.5}
+        - {x: -23, y: -47.5}
+        - {x: 29, y: -47.5}
+        - {x: 29, y: 32.5}
+        - {x: 15, y: 47.5}
+    - name: mummySpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 37
+        width: 59
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: 48}
+        - {x: -29.5, y: -29}
+        - {x: -18.5, y: -48}
+        - {x: 24.5, y: -48}
+        - {x: 29.5, y: -43}
+        - {x: 29.5, y: 41}
+        - {x: 15.5, y: 48}
+    - name: mummySpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 37
+        width: 59
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23.5, y: 48}
+        - {x: -16.5, y: 48}
+        - {x: -29.5, y: 37}
+        - {x: -29.5, y: -3}
+        - {x: -15.5, y: -48}
+        - {x: 23.5, y: -48}
+        - {x: 25.5, y: -42}
+        - {x: 29.5, y: -37}
+        - {x: 29.5, y: 27}
+    - name: mummySpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 37
+        width: 59
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23.5, y: 48}
+        - {x: -16.5, y: 48}
+        - {x: -29.5, y: 37}
+        - {x: -29.5, y: -3}
+        - {x: -15.5, y: -48}
+        - {x: 23.5, y: -48}
+        - {x: 25.5, y: -42}
+        - {x: 29.5, y: -37}
+        - {x: 29.5, y: 27}
+    - name: mummySpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 37
+        width: 59
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 48}
+        - {x: -29.5, y: 34}
+        - {x: -29.5, y: 10}
+        - {x: -18.5, y: -48}
+        - {x: 29.5, y: -48}
+        - {x: 29.5, y: 48}
+    - name: mummySpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 38
+        width: 58
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 47.5}
+        - {x: -29, y: 38.5}
+        - {x: -29, y: -19.5}
+        - {x: -26, y: -47.5}
+        - {x: 29, y: -47.5}
+        - {x: 29, y: 32.5}
+        - {x: 15, y: 47.5}
+    - name: mummySpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 38
+        width: 58
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 47.5}
+        - {x: -29, y: 42.5}
+        - {x: -29, y: -10.5}
+        - {x: -21, y: -47.5}
+        - {x: 29, y: -47.5}
+        - {x: 29, y: 37.5}
+        - {x: 20, y: 47.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
