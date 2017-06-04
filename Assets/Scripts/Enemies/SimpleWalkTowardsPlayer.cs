@@ -8,6 +8,8 @@ public class SimpleWalkTowardsPlayer : BaseWalkingBehaviour {
 		if (myself.state == Enemy.State.WalkToPlayer) {
 			Vector2 direction = (myself.player.transform.position - myself.transform.position).normalized;
 			rb2d.velocity = direction.normalized * walkingSpeed;
+		} else {
+			rb2d.velocity = Vector2.zero;
 		}
 	}
 }
