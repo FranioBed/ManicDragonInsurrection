@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-//using LitJson;
+using LitJson;
 using UnityEngine;
 
 public class ItemsManager : MonoBehaviour
 {
-  /*  private const string usableItemsJsonFile = "../ManicDragonInsurrection/Assets/Resources/JSON Files/Items/usable-items.json";
+    private const string usableItemsJsonFile = "../ManicDragonInsurrection/Assets/Resources/JSON Files/Items/usable-items.json";
     private const string equippableItemsJsonFile = "../ManicDragonInsurrection/Assets/Resources/JSON Files/Items/equippable-items.json";
     public List<UsableItem> usableItems = new List<UsableItem>();
     public List<EquippableItem> exuippableItems = new List<EquippableItem>();
@@ -104,5 +104,5 @@ public class ItemsManager : MonoBehaviour
                 //item.features.Add(JsonMapper.ToObject<TempStatModFeature>(feature.ToString()));
             }
         }
-    }*/
+    }
 }
