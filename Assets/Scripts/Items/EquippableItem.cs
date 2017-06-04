@@ -10,19 +10,17 @@ public class EquippableItem : Item {
     }
     public void Equip(Player player)
     {
-        throw new NotImplementedException();
         foreach (var feature in features)
         {
-            feature.Activate();
+            feature.Activate(player);
         }
     }
 
     public void UnEquip(Player player)
     {
-        throw new NotImplementedException();
         foreach (var feature in features)
         {
-            feature.Deactivate();
+            feature.Deactivate(player);
         }
     }
 }

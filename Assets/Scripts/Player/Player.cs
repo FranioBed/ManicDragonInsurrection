@@ -4,6 +4,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 1f;
+    public float Health { get; set; }
+    public float Mana { get; set; }
 
     private Rigidbody2D rb2D;
     private Equipment equipment = new Equipment();
@@ -11,6 +13,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        Health = 100;
+        Mana = 100;
     }
 
     void FixedUpdate()
