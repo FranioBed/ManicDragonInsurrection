@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour {
         LevelInfo levelInfo = _levelGeneratorSerivce.generate(seed);
         IList<Marker> markers = _sceneCreatorService.Create(levelInfo);
         setPlayerToStartPos(markers);
+
     }
 
     private void setPlayerToStartPos(IList<Marker> markers) //TODO: extract to another class (single-responsibility rule)

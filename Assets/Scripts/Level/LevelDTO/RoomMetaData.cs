@@ -11,5 +11,7 @@ namespace Assets.Scripts.Level.LevelDTO
         public IEnumerable<IntVector2> doorLocations;
         public bool hasExit;
         public bool hasStart;
+        public int enemyCount = 1; //TODO: populate it in levelGenerator
+        public int chestCount = 1; //TODO: populate it in levelGenerator
     }
 }

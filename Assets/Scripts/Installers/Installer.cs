@@ -30,6 +30,7 @@ public class Installer : MonoInstaller
         //level spawner components
         Container.Bind<LevelTilesSpawner>().AsSingle();
         Container.Bind<LevelItemsSpawner>().AsSingle();
+        Container.Bind<EnemiesSpawner>().AsSingle();
         Container.Bind<LevelItemMarker>().AsSingle();
     }
 }

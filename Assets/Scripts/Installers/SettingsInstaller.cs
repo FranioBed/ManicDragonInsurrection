@@ -32,6 +32,7 @@ public class SettingsInstaller : ScriptableObjectInstaller<SettingsInstaller>
     [Serializable]
     public class RoomSettings
     {
+        public float enemyDensity;
         public bool useFancyLayouts;
         public int maxRoomSizeX;
         public int minRoomSizeX;
@@ -51,7 +52,7 @@ public class SettingsInstaller : ScriptableObjectInstaller<SettingsInstaller>
         public PrefabsConfig prefabConfig;
         public LevelTiles levelTiles;
         public LevelItems levelItems;
-        public bool plzAddCharsAndItemsEtc;
+        public Enemies enemies;
     }
 
     [Serializable]
@@ -92,6 +93,14 @@ public class SettingsInstaller : ScriptableObjectInstaller<SettingsInstaller>
         public GameObject chest;
     }
 
+    [Serializable]
+    public class Enemies
+    {
+        public GameObject enemy1;
+        public GameObject enemy2;
+        public GameObject enemy3;
+    }
+
     public override void InstallBindings()
     {
         Container.BindInstance(game);
@@ -102,5 +111,6 @@ public class SettingsInstaller : ScriptableObjectInstaller<SettingsInstaller>
         Container.BindInstance(prefabs.prefabConfig);
         Container.BindInstance(prefabs.levelTiles);
         Container.BindInstance(prefabs.levelItems);
+        Container.BindInstance(prefabs.enemies);
     }
 }

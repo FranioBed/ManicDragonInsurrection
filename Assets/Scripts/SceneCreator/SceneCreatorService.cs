@@ -13,6 +13,8 @@ namespace Assets.Scripts.SceneCreator
         [Inject]
         LevelItemsSpawner _itemsSpawner;
         [Inject]
+        EnemiesSpawner _enemiesSpanwer;
+        [Inject]
         LevelItemMarker _itemsMarker;
 
         public IList<Marker> Create(LevelInfo levelInfo)
@@ -20,6 +22,7 @@ namespace Assets.Scripts.SceneCreator
             cleanUp();
             _tilesSpawner.spawn(levelInfo.tiles);
             _itemsSpawner.spawn(levelInfo.itemsOnTiles);
+            _enemiesSpanwer.spawn(levelInfo.itemsOnTiles);
             IList<Marker> markers = _itemsMarker.getMarkers(levelInfo.itemsOnTiles);
             return markers;
         }

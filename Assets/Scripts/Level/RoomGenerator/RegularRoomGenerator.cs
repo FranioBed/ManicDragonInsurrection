@@ -28,10 +28,10 @@ public class RegularRoomGenerator : IIRoomGenerator {
                 placeStart(ref metaTile, ref itemsOnTiles, room, rng);
             if (room.hasExit)
                 placeExit(ref metaTile, ref itemsOnTiles, room, rng);
-            //TODO:
-            //if (room.enemiesCount > 0)
-            //if (room.lootChests > 0)
-            //etc.
+            for (int i = 0; i < room.enemyCount; i++)
+                placeEnemy(ref metaTile, ref itemsOnTiles, room, rng);
+            for (int i = 0; i < room.chestCount; i++)
+                placeChest(ref metaTile, ref itemsOnTiles, room, rng);
         }
         Debug.Log("Rooms generated successfully");
     }
@@ -77,6 +77,28 @@ public class RegularRoomGenerator : IIRoomGenerator {
         placeItemOnFloor(ref metaTile, ref itemsOnTiles, room, ItemOnTileEnum.STARTPOS, rng);
     }
 
+    private void placeEnemy(ref MetaTileEnum[,] metaTile, ref ItemOnTileEnum[,] itemsOnTiles, RoomMetaData room, System.Random rng)
+    {
+        ItemOnTileEnum enemyToPlace;
+        switch (rng.Next()%3) {
+            case 0:
+                enemyToPlace = ItemOnTileEnum.ENEMY_1;
+                break;
+            case 1:
+                enemyToPlace = ItemOnTileEnum.ENEMY_2;
+                break;
+            default:
+                enemyToPlace = ItemOnTileEnum.ENEMY_3;
+                break;
+        }
+        placeItemOnFloor(ref metaTile, ref itemsOnTiles, room, enemyToPlace, rng);
+    }
+
+    private void placeChest(ref MetaTileEnum[,] metaTile, ref ItemOnTileEnum[,] itemsOnTiles, RoomMetaData room, System.Random rng)
+    {
+        placeItemOnFloor(ref metaTile, ref itemsOnTiles, room, ItemOnTileEnum.CHEST, rng);
+    }
+
     private void placeItemOnFloor(ref MetaTileEnum[,] metaTile, ref ItemOnTileEnum[,] itemsOnTiles, 
         RoomMetaData room, ItemOnTileEnum whatToPlace, System.Random rng)
     {
@@ -87,7 +109,7 @@ public class RegularRoomGenerator : IIRoomGenerator {
              rng.Next(room.position.x + 1, room.position.x + room.size.x - 2),
              rng.Next(room.position.y + 1, room.position.y + room.size.y - 2));
         }
-        while (!isFloor(metaTile[attempt.x, attempt.y]) || !itemsOnTiles[attempt.x, attempt.y].Equals(ItemOnTileEnum.NULL));
+        while (!(isFloor(metaTile[attempt.x, attempt.y]) && itemsOnTiles[attempt.x, attempt.y].Equals(ItemOnTileEnum.NULL)));
         itemsOnTiles[attempt.x, attempt.y] = whatToPlace;
     }
 
