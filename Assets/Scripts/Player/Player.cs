@@ -12,12 +12,16 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb2D;
     private Equipment equipment = new Equipment();
     private float basicAttackCooldown = 0.0f;
+    private AnimationController animController;
+    private State state;
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         Health = 100;
         Mana = 100;
+        animController = GetComponent<AnimationController>();
+        state = State.Idle;
     }
 
     private void Update()
@@ -34,8 +38,11 @@ public class Player : MonoBehaviour
             projectile.GetComponent<Rigidbody2D>().velocity = direction * projectile.GetComponent<Projectile>().speed;
 
             projectile.transform.LookAt(transform.position + new Vector3(0, 0, 1), direction);
+            state = State.Fight;
 
         }
+
+        UpdateAnimationState();
     }
 
     void FixedUpdate()
@@ -47,6 +54,31 @@ public class Player : MonoBehaviour
         Vector2 direction = new Vector2(horizontal, vertical);
         rb2D.velocity = (direction.magnitude > 1) ? direction.normalized * speed : direction * speed;
         //rb2D.AddForce(direction * speed);
+
+        if (rb2D.velocity.magnitude > 1)
+            state = State.Walk;
+        else if (state != State.Fight && state != State.Die)
+            state = State.Idle;
+    }
+
+    void UpdateAnimationState()
+    {
+        if (state == State.Idle)
+        {
+            animController.SetAnimationState(AnimationState.IDLE);
+        }
+        else if (state == State.Walk)
+        {
+            animController.SetAnimationState(AnimationState.WALK);
+        }
+        else if (state == State.Fight)
+        {
+            animController.SetAnimationState(AnimationState.FIGHT);
+        }
+        else if (state == State.Die)
+        {
+            animController.SetAnimationState(AnimationState.DIE);
+        }
     }
 
     //--------------------------------------------------------------------------------------------------------
@@ -111,6 +143,14 @@ public class Player : MonoBehaviour
 		//TODO: obniżyć obrażenia o armor
 		Health -= damage;
 	}
+
+    public enum State
+    {
+        Idle,
+        Walk,
+        Fight,
+        Die,
+    }
 
     //--------------------------------------------------------------------------------------------------------
 }
