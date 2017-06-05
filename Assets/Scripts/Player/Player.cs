@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb2D;
     private Equipment equipment = new Equipment();
+    private float basicAttackCooldown = 0.0f;
 
     void Start()
     {
@@ -21,16 +22,19 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        basicAttackCooldown = (basicAttackCooldown <= 0 ? basicAttackCooldown = 0 : basicAttackCooldown - Time.deltaTime);
+        if (Input.GetMouseButton(0) && basicAttackCooldown == 0)
         {
-            Debug.Log("Mouse button pressed");
+            basicAttackCooldown = attackSpeed;
             Vector2 target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
             Vector2 myPos = new Vector2(transform.position.x, transform.position.y);
             Vector2 direction = target - myPos;
             direction.Normalize();
+            //float angle = Mathf.Atan2(direction.x, direction.y);
+            //Quaternion q = Quaternion.AngleAxis(angle, direction);
             GameObject projectile = (GameObject)Instantiate(basicAttackPrefab, myPos, Quaternion.identity);
             projectile.GetComponent<Rigidbody2D>().velocity = direction * projectile.GetComponent<Projectile>().speed;
-            
+            //projectile.transform.LookAt(target);
         }
     }
 
