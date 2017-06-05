@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class Player : MonoBehaviour
     public float Health { get; set; }
     public float Mana { get; set; }
     public GameObject basicAttackPrefab;
+    public Text healthTextUI;
+    public Text manaTextUI;
+    public Slider healthSlider;
+    public Slider manaSlider;
 
     private Rigidbody2D rb2D;
     private Equipment equipment = new Equipment();
@@ -22,10 +27,16 @@ public class Player : MonoBehaviour
         Mana = 100;
         animController = GetComponent<AnimationController>();
         state = State.Idle;
+        
     }
 
     private void Update()
     {
+        healthTextUI.text = Health.ToString();
+        manaTextUI.text = Mana.ToString();
+        healthSlider.value = Health;
+        manaSlider.value = Mana;
+
         basicAttackCooldown = (basicAttackCooldown <= 0 ? basicAttackCooldown = 0 : basicAttackCooldown - Time.deltaTime);
         if (Input.GetMouseButton(0) && basicAttackCooldown == 0)
         {
