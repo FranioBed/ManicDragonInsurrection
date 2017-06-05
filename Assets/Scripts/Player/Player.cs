@@ -4,8 +4,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 1f;
+    public float attackSpeed = 0.5f;
     public float Health { get; set; }
     public float Mana { get; set; }
+    public GameObject basicAttackPrefab;
 
     private Rigidbody2D rb2D;
     private Equipment equipment = new Equipment();
@@ -15,6 +17,21 @@ public class Player : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         Health = 100;
         Mana = 100;
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Mouse button pressed");
+            Vector2 target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+            Vector2 myPos = new Vector2(transform.position.x, transform.position.y);
+            Vector2 direction = target - myPos;
+            direction.Normalize();
+            GameObject projectile = (GameObject)Instantiate(basicAttackPrefab, myPos, Quaternion.identity);
+            projectile.GetComponent<Rigidbody2D>().velocity = direction * projectile.GetComponent<Projectile>().speed;
+            
+        }
     }
 
     void FixedUpdate()
