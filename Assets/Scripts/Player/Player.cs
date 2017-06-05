@@ -30,11 +30,9 @@ public class Player : MonoBehaviour
             Vector2 myPos = new Vector2(transform.position.x, transform.position.y);
             Vector2 direction = target - myPos;
             direction.Normalize();
-            //float angle = Mathf.Atan2(direction.x, direction.y);
-            //Quaternion q = Quaternion.AngleAxis(angle, direction);
             GameObject projectile = (GameObject)Instantiate(basicAttackPrefab, myPos, Quaternion.identity);
             projectile.GetComponent<Rigidbody2D>().velocity = direction * projectile.GetComponent<Projectile>().speed;
-            //projectile.transform.LookAt(target);
+            projectile.transform.LookAt(transform.position + new Vector3(0, 0, 1), direction);
         }
     }
 
