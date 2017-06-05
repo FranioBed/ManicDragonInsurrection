@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
             direction.Normalize();
             GameObject projectile = (GameObject)Instantiate(basicAttackPrefab, myPos, Quaternion.identity);
             projectile.GetComponent<Rigidbody2D>().velocity = direction * projectile.GetComponent<Projectile>().speed;
-            
+
         }
     }
 
