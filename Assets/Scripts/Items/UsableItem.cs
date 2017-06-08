@@ -3,15 +3,16 @@
 public class UsableItem : Item
 {
     public bool IsUsed = false;
-    public UsableItem(string name, string description, string spritePath) : base(name, description, spritePath)
+    public UsableItem(string name, int uniqueId, string description, string spritePath)
+        : base(name, uniqueId, description, spritePath)
     {
-        
+
     }
 
     public void OnUse(Player player)
     {
         IsUsed = true;
-        
+
         foreach (var feature in features)
         {
             feature.Activate(player);

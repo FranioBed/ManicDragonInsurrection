@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
         Mana = 100;
         animController = GetComponent<AnimationController>();
         state = State.Idle;
-        
+
     }
 
     private void Update()
@@ -52,6 +53,8 @@ public class Player : MonoBehaviour
             state = State.Fight;
 
         }
+
+        FastAccessInput();
 
         UpdateAnimationState();
     }
@@ -92,7 +95,37 @@ public class Player : MonoBehaviour
         }
     }
 
-    //--------------------------------------------------------------------------------------------------------
+    private void FastAccessInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (equipment.fastAccess[0] != null)
+            {
+                equipment.fastAccess[0].OnUse(this);
+                //TODO: decrement
+                equipment.fastAccess[0] = null;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (equipment.fastAccess[1] != null)
+            {
+                equipment.fastAccess[1].OnUse(this);
+                //TODO: decrement
+                equipment.fastAccess[0] = null;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (equipment.fastAccess[2] != null)
+            {
+                equipment.fastAccess[2].OnUse(this);
+                //TODO: decrement
+                equipment.fastAccess[0] = null;
+            }
+        }
+    }
+
     public void UseFastAccessItem(int id)
     {
         equipment.fastAccess[id].OnUse(this);
@@ -139,21 +172,35 @@ public class Player : MonoBehaviour
         equipment.armor = null;
     }
 
-    private void AddItemToInventory(Item newItem)
+    public void AddItemToInventory(EquippableItem newItem)
     {
         equipment.inventory.Add(newItem);
     }
 
-    public void RemoveItemFromInventory(Item item)
+    public void AddItemToInventory(UsableItem newItem)
     {
-        //TODO:
-        throw new NotImplementedException();
+        equipment.inventory.Add(newItem);
+        //TODO: remove: (only for tests)
+        EquipItemToFastAccess(0, newItem);
     }
 
-	public void GetDamage(float damage) {
-		//TODO: obniżyć obrażenia o armor
-		Health -= damage;
-	}
+    public void RemoveItemFromInventory(Item item)
+    {
+        for (int i = 0; i < equipment.inventory.Count; i++)
+        {
+            if (equipment.inventory[i] != null && equipment.inventory[i].UniqueId == item.UniqueId)
+            {
+                //TODO: replace by .Find
+                equipment.inventory.RemoveAt(i);
+            }
+        }
+    }
+
+    public void GetDamage(float damage)
+    {
+        //TODO: obniżyć obrażenia o armor
+        Health -= damage;
+    }
 
     public enum State
     {
@@ -163,5 +210,35 @@ public class Player : MonoBehaviour
         Die,
     }
 
-    //--------------------------------------------------------------------------------------------------------
+    public void ConstantlyHealthIncrease(float amount, float interval, float duration)
+    {
+        StartCoroutine(AddHealthConstantly(amount, interval, duration));
+    }
+
+    public void ConstantlyManaIncrease(float amount, float interval, float duration)
+    {
+        StartCoroutine(AddManaConstantly(amount, interval, duration));
+    }
+
+    private IEnumerator AddHealthConstantly(float amount, float interval, float duration)
+    {
+        while (duration > 0)
+        {
+            duration -= interval;
+            Health += amount;
+
+            yield return new WaitForSeconds(interval);
+        }
+    }
+
+    private IEnumerator AddManaConstantly(float amount, float interval, float duration)
+    {
+        while (duration > 0)
+        {
+            duration -= interval;
+            Mana += amount;
+
+            yield return new WaitForSeconds(interval);
+        }
+    }
 }

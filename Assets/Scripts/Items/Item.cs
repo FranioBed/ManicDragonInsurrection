@@ -4,17 +4,18 @@ using UnityEngine;
 public abstract class Item
 {
     public string Name { get; set; }
+    public int UniqueId { get; set; }
     public string Description { get; set; }
-    public Sprite Miniature { get; set; }
+    public string Miniature { get; set; }
 
     public List<Feature> features = new List<Feature>();
 
-    protected Item(string name, string description, string spritePath)
+    protected Item(string name, int uniqueId, string description, string spritePath)
     {
         Name = name;
+        UniqueId = uniqueId;
         Description = description;
-        //TODO:
-        //Miniature = Resources.Load<Sprite>(spriteName);
+        Miniature = @"Images/Items/" + spritePath;
     }
     /*
     public bool IsArcherItem { get; private set; }

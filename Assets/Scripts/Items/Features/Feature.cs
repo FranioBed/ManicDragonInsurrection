@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class Feature : MonoBehaviour
+public abstract class Feature
 {
     public enum FeatureTypes { Instant, Continues, Temp }
     public float Amount { get; set; }

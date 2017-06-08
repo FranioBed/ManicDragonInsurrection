@@ -2,25 +2,27 @@
 	"usable":[
 	{
 		"Name": "item01",
+		"UniqueId": 0,
 		"Description": "empty",
-		"SpritePath": "sprite01.png",
+		"SpritePath": "PotionHealth",
 		"Features":[
 		{
 			"Type": 0,
 			"Stat": 0,
-			"Amount": 0.5
+			"Amount": 20
 		}
 		]
 	},
 	{
 		"Name": "item02",
+		"UniqueId": 1,
 		"Description": "empty",
-		"SpritePath": "sprite01.png",
+		"SpritePath": "PotionHealth",
 		"Features": [
 		{
 			"Type": 1,
 			"Stat": 0,
-			"Amount": 0.05,
+			"Amount": 5,
 			"Interval": 1,
 			"Duration": 10
 		}
@@ -28,117 +30,125 @@
 	},
 	{
 		"Name": "item03",
+		"UniqueId": 2,
 		"Description": "empty",
-		"SpritePath": "sprite01.png",
+		"SpritePath": "PotionHealth",
 		"Features": [
 		{
-			"Type": 2,
+			"Type": 0,
 			"Stat": 0,
-			"Amount": 2,
-			"Duration": 20
+			"Amount": 30
 		}
 		]
 	},
 	{
 		"Name": "item04",
+		"UniqueId": 3,
 		"Description": "empty",
-		"SpritePath": "sprite01.png",
+		"SpritePath": "PotionMana",
 		"Features": [
 		{
 			"Type": 0,
 			"Stat": 1,
-			"Amount": 1
+			"Amount": 20
 		}
 		]
 	},
 	{
 		"Name": "item05",
+		"UniqueId": 4,
 		"Description": "empty",
-		"SpritePath": "sprite01.png",
+		"SpritePath": "PotionMana",
 		"Features": [
 		{
 			"Type": 1,
 			"Stat": 1,
-			"Amount": 0.1,
-			"Interval": 1,
+			"Amount": 2,
+			"Interval": 0.5,
 			"Duration": 10
 		}
 		]
 	},
 	{
 		"Name": "item06",
+		"UniqueId": 5,
 		"Description": "empty",
-		"SpritePath": "sprite01.png",
+		"SpritePath": "PotionMana",
 		"Features": [
 		{
-			"Type": 2,
+			"Type": 1,
 			"Stat": 1,
-			"Amount": 3,
-			"Duration": 20
+			"Amount": 1,
+			"Interval": 0.4,
+			"Duration": 5
 		}
 		]
 	},
 	{
 		"Name": "item07",
+		"UniqueId": 6,
 		"Description": "empty",
-		"SpritePath": "sprite01.png",
+		"SpritePath": "PotionMana",
 		"Features": [
 		{
-			"Type": 2,
-			"Stat": 2,
-			"Amount": 1.2,
-			"Duration": 10
+			"Type": 0,
+			"Stat": 0,
+			"Amount": 30
 		},
 		{
-			"Type": 2,
-			"Stat": 3,
-			"Amount": 0.8,
-			"Duration": 10
+			"Type": 1,
+			"Stat": 1,
+			"Amount": 1,
+			"Interval": 0.5,
+			"Duration": 5
 		}
 		]
 	},
 	{
 		"Name": "item08",
+		"UniqueId": 7,
 		"Description": "empty",
-		"SpritePath": "sprite01.png",
+		"SpritePath": "PotionMana",
 		"Features": [
 		{
-			"Type": 2,
-			"Stat": 3,
-			"Amount": 1.5,
-			"Duration": 10
+			"Type": 0,
+			"Stat": 1,
+			"Amount": 10
 		},
 		{
-			"Type": 2,
-			"Stat": 2,
-			"Amount": 1.5,
-			"Duration": 10
+			"Type": 1,
+			"Stat": 1,
+			"Amount": 5,
+			"Interval": 1,
+			"Duration": 7
 		}
 		]
 	},
 	{
 		"Name": "item09",
+		"UniqueId": 8,
 		"Description": "empty",
-		"SpritePath": "sprite01.png",
+		"SpritePath": "PotionMana",
 		"Features": [
 		{
-			"Type": 2,
+			"Type": 0,
 			"Stat": 1,
-			"Amount": 0.5,
-			"Duration": 10
+			"Amount": 40
 		}
 		]
 	},
 	{
 		"Name": "item10",
+		"UniqueId": 9,
 		"Description": "empty",
-		"SpritePath": "sprite01.png",
+		"SpritePath": "PotionMana",
 		"Features": [
 		{
-			"Type": 2,
+			"Type": 1,
 			"Stat": 1,
-			"Amount": 1,
-			"Duration": 10
+			"Amount": 3,
+			"Interval": 0.5,
+			"Duration": 7
 		}
 		]
 	}

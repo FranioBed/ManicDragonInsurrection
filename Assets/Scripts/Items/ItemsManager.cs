@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using LitJson;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ItemsManager : MonoBehaviour
 {
     private const string usableItemsJsonFile = "../ManicDragonInsurrection/Assets/Resources/JSON Files/Items/usable-items.json";
     private const string equippableItemsJsonFile = "../ManicDragonInsurrection/Assets/Resources/JSON Files/Items/equippable-items.json";
-    public List<UsableItem> usableItems = new List<UsableItem>();
+    private static List<UsableItem> usableItems = new List<UsableItem>();
     public List<EquippableItem> exuippableItems = new List<EquippableItem>();
 
     void Awake()
@@ -16,7 +17,7 @@ public class ItemsManager : MonoBehaviour
         LoadUsableItemsListFromFile(usableItemsJsonFile);
         Debug.Log("Usable items count: " + usableItems.Count);
         LoadEquippableItemsListFromFile(equippableItemsJsonFile);
-        Debug.Log("Equippable items count: " + exuippableItems.Count);
+        //Debug.Log("Equippable items count: " + exuippableItems.Count);
     }
 
     private void LoadEquippableItemsListFromFile(string path)
@@ -28,7 +29,8 @@ public class ItemsManager : MonoBehaviour
             foreach (JsonData elem in data["equippable"])
             {
                 EquippableItem item = new EquippableItem(
-                    elem["Name"].ToString(), 
+                    elem["Name"].ToString(),
+                    Int32.Parse(elem["UniqueId"].ToString()),
                     elem["Description"].ToString(),
                     (EquippableItem.EquippableType)(int)elem["Type"],
                     elem["SpritePath"].ToString());
@@ -53,7 +55,8 @@ public class ItemsManager : MonoBehaviour
             foreach (JsonData elem in data["usable"])
             {
                 UsableItem item = new UsableItem(
-                    elem["Name"].ToString(), 
+                    elem["Name"].ToString(),
+                    Int32.Parse(elem["UniqueId"].ToString()),
                     elem["Description"].ToString(),
                     elem["SpritePath"].ToString());
                 
@@ -67,7 +70,7 @@ public class ItemsManager : MonoBehaviour
         }
     }
 
-    private static void LoadFeatures(JsonData elem, Item item)
+    private void LoadFeatures(JsonData elem, Item item)
     {
         foreach (JsonData feature in elem["Features"])
         {
@@ -104,5 +107,12 @@ public class ItemsManager : MonoBehaviour
                 //item.features.Add(JsonMapper.ToObject<TempStatModFeature>(feature.ToString()));
             }
         }
+    }
+
+    public static UsableItem GetRandomUsableItem()
+    {
+        Random.seed = System.DateTime.Now.Millisecond;
+        int rand = (int)Random.Range(0, usableItems.Count);
+        return usableItems[rand];
     }
 }

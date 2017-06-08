@@ -13,6 +13,7 @@ public class TempStatModFeature : Feature {
 
     public override void Activate(Player player)
     {
+        throw new NotImplementedException();
         if (Stat == StatTypes.Health)
             player.Health += Amount;
         else if (Stat == StatTypes.Mana)
@@ -23,7 +24,7 @@ public class TempStatModFeature : Feature {
             throw new NotImplementedException();
         else if (Stat == StatTypes.WeaponDamage)
             throw new NotImplementedException();
-        StartCoroutine(Finish(player));
+        //StartCoroutine(Finish(player));
     }
 
     public override void Deactivate(Player player)

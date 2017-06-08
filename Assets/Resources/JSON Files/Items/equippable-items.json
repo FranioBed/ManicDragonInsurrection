@@ -2,6 +2,7 @@
 	"equippable":[
 	{
 		"Name": "armor01",
+		"UniqueId": 0,
 		"Description": "empty",
 		"Type": 0,
 		"SpritePath": "sprite01.png",
@@ -15,6 +16,7 @@
 	},
 	{
 		"Name": "armor02",
+		"UniqueId": 1,
 		"Description": "empty",
 		"Type": 0,
 		"SpritePath": "sprite01.png",
@@ -28,6 +30,7 @@
 	},
 	{
 		"Name": "armor03",
+		"UniqueId": 2,
 		"Description": "empty",
 		"Type": 0,	
 		"SpritePath": "sprite01.png",
@@ -46,6 +49,7 @@
 	},
 	{
 		"Name": "weapon01",
+		"UniqueId": 3,
 		"Description": "empty",
 		"Type": 1,
 		"SpritePath": "sprite01.png",
@@ -64,6 +68,7 @@
 	},
 	{
 		"Name": "weapon02",
+		"UniqueId": 4,
 		"Description": "empty",
 		"Type": 1,
 		"SpritePath": "sprite01.png",
@@ -82,6 +87,7 @@
 	},
 		{
 		"Name": "weapon03",
+		"UniqueId": 5,
 		"Description": "empty",
 		"Type": 1,
 		"SpritePath": "sprite01.png",
