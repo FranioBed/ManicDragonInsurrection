@@ -69,10 +69,22 @@ public class Player : MonoBehaviour
         rb2D.velocity = (direction.magnitude > 1) ? direction.normalized * speed : direction * speed;
         //rb2D.AddForce(direction * speed);
 
-        if (rb2D.velocity.magnitude > 1)
+        if(horizontal != 0)
+        {
+            if (horizontal > 0) FlipCharacter(false);
+            else FlipCharacter(true);
+        }
+
+        if (rb2D.velocity.magnitude > 0)
             state = State.Walk;
         else if (state != State.Fight && state != State.Die)
             state = State.Idle;
+    }
+
+    void FlipCharacter(bool flip)
+    {
+        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        rend.flipX = flip;
     }
 
     void UpdateAnimationState()
@@ -200,6 +212,10 @@ public class Player : MonoBehaviour
     {
         //TODO: obniżyć obrażenia o armor
         Health -= damage;
+        if (Health < 0)
+        {
+            state = State.Die;
+        }
     }
 
     public enum State
