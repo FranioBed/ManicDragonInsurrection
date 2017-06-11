@@ -21,19 +21,24 @@ public class Player : MonoBehaviour
     private AnimationController animController;
     private State state;
     private bool shield;
+    private int maxMana = 100;
+    private int maxHealth = 100;
+    private float manaRegenPerSecond = 0.5f;
+    private float healthRegenPerSecond = 0.2f;
+
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        Health = 100;
-        Mana = 100;
+        Health = maxHealth;
+        Mana = maxMana;
         animController = GetComponent<AnimationController>();
         state = State.Idle;
-
     }
 
     private void Update()
     {
+        PassiveRegeneration(Time.deltaTime);
         healthTextUI.text = Health.ToString();
         manaTextUI.text = Mana.ToString();
         healthSlider.value = Health;
@@ -43,6 +48,10 @@ public class Player : MonoBehaviour
         if (Input.GetAxis("Fire1")>0 && basicAttackCooldown == 0)
         {
             BasicAttack();
+        }
+        if (Input.GetAxis("Fire2") > 0 && Mana >= 20)
+        {
+            SecondaryAttack();
         }
         if (Input.GetAxis("Fire3") > 0)
         {
@@ -59,6 +68,16 @@ public class Player : MonoBehaviour
         UpdateAnimationState();
     }
 
+    private void SecondaryAttack()
+    {
+        //TODO: put in correct place
+        float manaCost = 20;
+        float radius = 5;
+        Mana -= manaCost;
+
+        throw new NotImplementedException();
+    }
+
     private void DefensiveSkill()
     {
         //TODO: put in correct place
@@ -67,7 +86,6 @@ public class Player : MonoBehaviour
         shield = true;
         //visual cue for shield, TODO: replace with additional sprite?
         GetComponent<SpriteRenderer>().color = Color.blue;
-        //throw new NotImplementedException();
     }
 
     void BasicAttack()
@@ -269,7 +287,7 @@ public class Player : MonoBehaviour
         while (duration > 0)
         {
             duration -= interval;
-            Health += amount;
+            Health = (Health > maxHealth ? maxHealth : Health + amount);
 
             yield return new WaitForSeconds(interval);
         }
@@ -280,9 +298,15 @@ public class Player : MonoBehaviour
         while (duration > 0)
         {
             duration -= interval;
-            Mana += amount;
+            Mana = (Mana > maxMana ? maxMana : Mana + amount);
 
             yield return new WaitForSeconds(interval);
         }
+    }
+
+    private void PassiveRegeneration(float delta)
+    {
+        Mana = (Mana >= maxMana ? maxMana : Mana + manaRegenPerSecond * delta);
+        Health = (Health >= maxHealth ? maxHealth : Health + healthRegenPerSecond * delta);
     }
 }
