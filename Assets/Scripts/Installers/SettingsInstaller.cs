@@ -33,7 +33,7 @@ public class SettingsInstaller : ScriptableObjectInstaller<SettingsInstaller>
     public class RoomSettings
     {
         public float enemyDensity;
-        public bool useFancyLayouts;
+        public float chestChance;
         public int maxRoomSizeX;
         public int minRoomSizeX;
         public int maxRoomSizeY;

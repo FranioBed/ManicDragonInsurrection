@@ -14,16 +14,13 @@ public class RegularRoomGenerator : IIRoomGenerator {
         ref MetaTileEnum[,] metaTile, ref ItemOnTileEnum[,] itemsOnTiles)
     {
         System.Random rng = new System.Random(seed);
-
-        Debug.Log("Using RegularRoomGenerator");
+        setEnemiesAndChestCount(ref roomList, rng);
         fillWithWalls(ref metaTile);
         fillWithNulls(ref itemsOnTiles);
         foreach (RoomMetaData room in roomList)
         {
             carveRoom(ref metaTile, room, rng);
             insertDoors(ref metaTile, room);
-            if (_settings.useFancyLayouts)
-                applyFancyLayout();
             if (room.hasStart)
                 placeStart(ref metaTile, ref itemsOnTiles, room, rng);
             if (room.hasExit)
@@ -34,6 +31,22 @@ public class RegularRoomGenerator : IIRoomGenerator {
                 placeChest(ref metaTile, ref itemsOnTiles, room, rng);
         }
         Debug.Log("Rooms generated successfully");
+    }
+
+    private void setEnemiesAndChestCount(ref IEnumerable<RoomMetaData> roomList, System.Random rng)
+    {
+        foreach (RoomMetaData room in roomList)
+        {
+            if (room.hasStart)
+            {
+                room.enemyCount = 0;
+                room.chestCount = 0;
+                continue;
+            }
+            int size = room.size.x * room.size.y;
+            room.enemyCount = (int) Math.Floor(size * _settings.enemyDensity);
+            room.chestCount = ((rng.Next() % 100) < (_settings.chestChance * 100) ? 1 : 0);
+        }
     }
 
     private void fillWithWalls(ref MetaTileEnum[,] metaTile)
