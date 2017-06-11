@@ -9,6 +9,8 @@ namespace Assets.Scripts.SceneCreator
     public abstract class LevelAbstractSpawner<InputType,ConfigType>
     {
         [Inject]
+        DiContainer diContainter;
+        [Inject]
         SettingsInstaller.PrefabsConfig _prefabConfig;
         [Inject]
         protected ConfigType _configOfType;
@@ -43,7 +45,7 @@ namespace Assets.Scripts.SceneCreator
                 Debug.LogWarning("Could not find mapping for " + items[m, n].ToString() + ". Skipping...");
                 return null;
             }
-            GameObject tileInstance = GameObject.Instantiate(prefab);
+            GameObject tileInstance = diContainter.InstantiatePrefab(prefab);
             //FIXME: Use GameObject reference instead of reflection
             tileInstance.transform.parent = GameObject.Find("TilesContainer").transform;
             tileInstance.transform.Translate(new Vector3(_prefabConfig.tileSpan * m, _prefabConfig.tileSpan * -n));

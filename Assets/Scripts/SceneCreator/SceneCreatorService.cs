@@ -20,7 +20,6 @@ namespace Assets.Scripts.SceneCreator
 
         public LevelGameObjectsHolder Create(LevelGameObjectsHolder oldHolder, LevelInfo levelInfo)
         {
-            Debug.LogError("Loading next level...");
             cleanUp(oldHolder);
             LevelGameObjectsHolder holder = create(levelInfo);
             return holder;
@@ -39,9 +38,17 @@ namespace Assets.Scripts.SceneCreator
 
         private void cleanUp(LevelGameObjectsHolder oldHolder)
         {
-            oldHolder.tiles.Clear();
-            oldHolder.items.Clear();
-            oldHolder.enemies.Clear();
+            removeGameObjects(oldHolder.tiles);
+            removeGameObjects(oldHolder.items);
+            removeGameObjects(oldHolder.enemies);
+        }
+
+        private void removeGameObjects(IList<GameObject> toRemoveList)
+        {
+            foreach (GameObject toRemove in toRemoveList)
+            {
+                GameObject.Destroy(toRemove);
+            }
         }
 
     }

@@ -1,15 +1,16 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.SceneCreator;
+using UnityEngine;
 using Zenject;
 
 public class ExitObject : MonoBehaviour {
 
     [Inject]
-    GameManager _gameManager;
+    LevelManager _levelManager;
 
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player"))
         {
-            _gameManager.goToNextLevel();
+            _levelManager.goToNextLevel();
         }
     }
 	

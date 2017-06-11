@@ -141,7 +141,7 @@ public class RegularRoomGenerator : IIRoomGenerator {
 
     private MetaTileEnum getFloorTile(System.Random rng)
     {
-        switch (rng.Next(1, 3))
+        switch (rng.Next()%3)
         {
             case 1:
                 return MetaTileEnum.FLOOR_1;
