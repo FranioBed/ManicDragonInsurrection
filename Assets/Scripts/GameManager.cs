@@ -6,7 +6,7 @@ using Zenject;
 using System;
 using System.Linq;
 
-public class GameManager : MonoBehaviour { 
+public class GameManager : MonoBehaviour {
     [Inject]
     LevelGeneratorService _levelGeneratorSerivce;
     [Inject]
@@ -22,31 +22,48 @@ public class GameManager : MonoBehaviour {
 
     public GameObject playerPrefab;
 
-    int seed;  //TODO: use as readonly property??
-
+    private int _seed;
+    private int _level;
+    private LevelGameObjectsHolder _holder;
 
     public void Start()
     {
-        seed = setSeed();
-        LevelInfo levelInfo = _levelGeneratorSerivce.generate(seed);
-        IList<Marker> markers = _sceneCreatorService.Create(levelInfo);
-        setPlayerToStartPos(markers);
-
+        _seed = setSeed();
+        _level = 0;
+        _holder = new LevelGameObjectsHolder();
+        goToNextLevel();
     }
 
-    private void setPlayerToStartPos(IList<Marker> markers) //TODO: extract to another class (single-responsibility rule)
+    public void goToNextLevel()
     {
-        Marker startPos = markers.Where<Marker>(m => ItemOnTileEnum.STARTPOS.Equals(m.itemType)).First();
-        float posX = startPos.position.x * _prefabSettings.tileSpan;
-        float posY = -startPos.position.y * _prefabSettings.tileSpan;
-        playerPrefab.transform.Translate(new Vector3(posX, posY, 0.0f));
+        _level++;
+        LevelInfo levelInfo = _levelGeneratorSerivce.generate(_seed);
+        _holder = _sceneCreatorService.Create(_holder, levelInfo);
+        setPlayerToStartPos(_holder.startPos);
     }
 
     private int setSeed()
     {
-       if (_settings.useFixedSeed)
+        if (_settings.useFixedSeed)
             return _settings.fixedSeed;
-       return new System.Random().Next();
+        return new System.Random().Next();
+    }
+
+    public int getSeed()
+    {
+        return _seed;
+    }
+
+    public int getLevel()
+    {
+        return _level;
+    }
+
+    private void setPlayerToStartPos(Marker startPos) //TODO: extract to another class (single-responsibility rule)
+    {
+        float posX = startPos.position.x * _prefabSettings.tileSpan;
+        float posY = -startPos.position.y * _prefabSettings.tileSpan;
+        playerPrefab.transform.Translate(new Vector3(posX, posY, 0.0f));
     }
 
     public void FixedUpdate()
