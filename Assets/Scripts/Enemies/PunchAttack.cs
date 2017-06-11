@@ -20,7 +20,7 @@ public class PunchAttack : BaseAttackBehaviour {
 
 	IEnumerator Fight() {
 		while (true) {
-			myself.player.GetDamage (GetRandomAttackPower ());
+			myself.player.RecieveDamage (GetRandomAttackPower ());
 			yield return new WaitForSeconds (attacksTimeOffset);
 		}
 	}

@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     private float basicAttackCooldown = 0.0f;
     private AnimationController animController;
     private State state;
+    private bool shield;
 
     void Start()
     {
@@ -39,24 +40,48 @@ public class Player : MonoBehaviour
         manaSlider.value = Mana;
 
         basicAttackCooldown = (basicAttackCooldown <= 0 ? basicAttackCooldown = 0 : basicAttackCooldown - Time.deltaTime);
-        if (Input.GetMouseButton(0) && basicAttackCooldown == 0)
+        if (Input.GetAxis("Fire1")>0 && basicAttackCooldown == 0)
         {
-            basicAttackCooldown = attackSpeed;
-            Vector2 target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-            Vector2 myPos = new Vector2(transform.position.x, transform.position.y);
-            Vector2 direction = target - myPos;
-            direction.Normalize();
-            GameObject projectile = (GameObject)Instantiate(basicAttackPrefab, myPos, Quaternion.identity);
-            projectile.GetComponent<Rigidbody2D>().velocity = direction * projectile.GetComponent<Projectile>().speed;
-
-            projectile.transform.LookAt(transform.position + new Vector3(0, 0, 1), direction);
-            state = State.Fight;
-
+            BasicAttack();
+        }
+        if (Input.GetAxis("Fire3") > 0)
+        {
+            DefensiveSkill();
+        }
+        else
+        {
+            shield = false;
+            GetComponent<SpriteRenderer>().color = Color.white;
         }
 
         FastAccessInput();
 
         UpdateAnimationState();
+    }
+
+    private void DefensiveSkill()
+    {
+        //TODO: put in correct place
+        float manaPerSecond = 5f;
+        Mana -= manaPerSecond * Time.deltaTime;
+        shield = true;
+        //visual cue for shield, TODO: replace with additional sprite?
+        GetComponent<SpriteRenderer>().color = Color.blue;
+        //throw new NotImplementedException();
+    }
+
+    void BasicAttack()
+    {
+        basicAttackCooldown = attackSpeed;
+        Vector2 target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+        Vector2 myPos = new Vector2(transform.position.x, transform.position.y);
+        Vector2 direction = target - myPos;
+        direction.Normalize();
+        GameObject projectile = (GameObject)Instantiate(basicAttackPrefab, myPos, Quaternion.identity);
+        projectile.GetComponent<Rigidbody2D>().velocity = direction * projectile.GetComponent<Projectile>().speed;
+
+        projectile.transform.LookAt(transform.position + new Vector3(0, 0, 1), direction);
+        state = State.Fight;
     }
 
     void FixedUpdate()
@@ -208,10 +233,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void GetDamage(float damage)
+    public void RecieveDamage(float damage)
     {
         //TODO: obniżyć obrażenia o armor
-        Health -= damage;
+        if (!shield)
+        {
+            Health -= damage;
+        }
         if (Health < 0)
         {
             state = State.Die;
