@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
 
 	public UnityEvent onStateChange;
 
+    private float stunTimer = 0;
 	public State state {
 		get {
 			return _state;
@@ -53,17 +54,31 @@ public class Enemy : MonoBehaviour {
 			if (distanceToPlayer > attackDistance) {
 				state = State.WalkToPlayer;
 			}
-		} else if (state == State.Dead) {
+        } else if (state == State.Stunned) {
+            stunTimer -= Time.deltaTime;
+            if (stunTimer <= 0)
+            {
+                state = State.Idle;
+            }
+        } else if (state == State.Dead) {
 			Destroy (gameObject);
 		}
 	}
 
-	public void GetDamage(float damage) {
+	public void RecieveDamage(float damage) {
 		health = health - damage;
 		if (health < 0) {
 			state = State.Dead;
 		}
 	}
+
+    public void RecieveKnockback(float stunDuration, Vector2 knockback)
+    {
+        state = State.Stunned;
+        stunTimer = stunDuration;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<Rigidbody2D>().AddForce(knockback, ForceMode2D.Impulse);
+    }
 
 	float CalculateDistanceToPlayer() {
 		return (player.transform.position - transform.position).magnitude;
@@ -71,7 +86,8 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void UpdateAnimator() {
-		if (state == State.Idle) {
+        //TODO: stun animation
+		if (state == State.Idle || state == State.Stunned) {
 			myAnimationController.SetAnimationState (AnimationState.IDLE);
 		} else if (state == State.WalkToPlayer) {
 			myAnimationController.SetAnimationState (AnimationState.WALK);
@@ -86,6 +102,7 @@ public class Enemy : MonoBehaviour {
 		Idle,
 		WalkToPlayer,
 		Fight,
+        Stunned,
 		Dead	
 	}
 }

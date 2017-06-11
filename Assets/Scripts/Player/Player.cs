@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb2D;
     private Equipment equipment = new Equipment();
     private float basicAttackCooldown = 0.0f;
+    private float secondaryAttackCooldown = 5.0f;
+    private float secondaryAttackCooldownTimer = 0.0f;
     private AnimationController animController;
     private State state;
     private bool shield;
@@ -45,11 +47,12 @@ public class Player : MonoBehaviour
         manaSlider.value = Mana;
 
         basicAttackCooldown = (basicAttackCooldown <= 0 ? basicAttackCooldown = 0 : basicAttackCooldown - Time.deltaTime);
+        secondaryAttackCooldownTimer = (secondaryAttackCooldownTimer <= 0 ? secondaryAttackCooldownTimer = 0 : secondaryAttackCooldownTimer - Time.deltaTime);
         if (Input.GetAxis("Fire1")>0 && basicAttackCooldown == 0)
         {
             BasicAttack();
         }
-        if (Input.GetAxis("Fire2") > 0 && Mana >= 20)
+        if (Input.GetAxis("Fire2") > 0 && Mana >= 20 && secondaryAttackCooldownTimer == 0)
         {
             SecondaryAttack();
         }
@@ -73,9 +76,22 @@ public class Player : MonoBehaviour
         //TODO: put in correct place
         float manaCost = 20;
         float radius = 5;
+        float strength = 3;
+        float damage = 3;
+        secondaryAttackCooldownTimer = secondaryAttackCooldown;
         Mana -= manaCost;
-
-        throw new NotImplementedException();
+        Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, radius);
+        foreach (Collider2D coll in hit)
+        {
+            if(coll.tag == "Enemy")
+            {
+                coll.GetComponent<Enemy>().RecieveDamage(damage);
+                Vector2 direction = coll.transform.position - transform.position;
+                direction.Normalize();
+                direction *= strength * 10;
+                coll.GetComponent<Enemy>().RecieveKnockback(1, direction);
+            }
+        }
     }
 
     private void DefensiveSkill()
