@@ -4,24 +4,26 @@ using UnityEngine;
 
 public class PunchAttack : BaseAttackBehaviour {
 
-	Coroutine fightCoroutine;
+	bool fightStarted = false;
 
 	void Start () {
 		myself.onStateChange.AddListener (HandleStateChange);
 	}
 	
 	void HandleStateChange() {
-		if (myself.state == Enemy.State.Fight) {
-			fightCoroutine = StartCoroutine (Fight());
-		} else if (fightCoroutine != null) {
-			StopCoroutine (fightCoroutine);
+		if (myself.state == Enemy.State.Fight && !fightStarted) {
+			StartCoroutine (Fight());
+			fightStarted = true;
+		} else if (fightStarted) {
+			StopAllCoroutines ();
+			fightStarted = false;
 		}
 	}
 
 	IEnumerator Fight() {
-		while (true) {
-			myself.player.RecieveDamage (GetRandomAttackPower ());
+		for (;;) {
 			yield return new WaitForSeconds (attacksTimeOffset);
+			myself.player.RecieveDamage (GetRandomAttackPower ());
 		}
 	}
 
