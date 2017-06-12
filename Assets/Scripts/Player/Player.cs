@@ -252,7 +252,14 @@ public class Player : MonoBehaviour
     {
         equipment.inventory.Add(newItem);
         //TODO: remove: (only for tests)
-        EquipItemToFastAccess(0, newItem);
+        if(equipment.fastAccess[0] == null)
+            EquipItemToFastAccess(0, newItem);
+        else if (equipment.fastAccess[1] == null)
+            EquipItemToFastAccess(1, newItem);
+        else if (equipment.fastAccess[2] == null)
+            EquipItemToFastAccess(2, newItem);
+        else
+            EquipItemToFastAccess(0, newItem);
     }
 
     public void RemoveItemFromInventory(Item item)
@@ -298,6 +305,12 @@ public class Player : MonoBehaviour
         StartCoroutine(AddManaConstantly(amount, interval, duration));
     }
 
+    public void TempSpeedIncrease(float amount, float duration)
+    {
+        speed += amount;
+        StartCoroutine(TempSpeedTimer(amount, duration));
+    }
+
     private IEnumerator AddHealthConstantly(float amount, float interval, float duration)
     {
         while (duration > 0)
@@ -318,6 +331,12 @@ public class Player : MonoBehaviour
 
             yield return new WaitForSeconds(interval);
         }
+    }
+
+    private IEnumerator TempSpeedTimer(float amount, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        speed -= amount;
     }
 
     private void PassiveRegeneration(float delta)

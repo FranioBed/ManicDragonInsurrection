@@ -1,9 +1,9 @@
 {
 	"usable":[
 	{
-		"Name": "item01",
+		"Name": "InstHealth +20",
 		"UniqueId": 0,
-		"Description": "empty",
+		"Description": "InstHealth +20",
 		"SpritePath": "PotionHealth",
 		"Features":[
 		{
@@ -14,9 +14,9 @@
 		]
 	},
 	{
-		"Name": "item02",
+		"Name": "ContHealth +5/1s/10s",
 		"UniqueId": 1,
-		"Description": "empty",
+		"Description": "ContHealth +5/1/10",
 		"SpritePath": "PotionHealth",
 		"Features": [
 		{
@@ -29,9 +29,9 @@
 		]
 	},
 	{
-		"Name": "item03",
+		"Name": "ContHealth +30",
 		"UniqueId": 2,
-		"Description": "empty",
+		"Description": "ContHealth +30",
 		"SpritePath": "PotionHealth",
 		"Features": [
 		{
@@ -42,9 +42,9 @@
 		]
 	},
 	{
-		"Name": "item04",
+		"Name": "InstMana +20",
 		"UniqueId": 3,
-		"Description": "empty",
+		"Description": "InstMana +20",
 		"SpritePath": "PotionMana",
 		"Features": [
 		{
@@ -55,9 +55,9 @@
 		]
 	},
 	{
-		"Name": "item05",
+		"Name": "ContMana +2/0.5s/10s",
 		"UniqueId": 4,
-		"Description": "empty",
+		"Description": "ContMana +2/0.5s/10s",
 		"SpritePath": "PotionMana",
 		"Features": [
 		{
@@ -70,9 +70,9 @@
 		]
 	},
 	{
-		"Name": "item06",
+		"Name": "ContHealth +5/0.4s/5s",
 		"UniqueId": 5,
-		"Description": "empty",
+		"Description": "ContHealth +5/0.4s/5s",
 		"SpritePath": "PotionMana",
 		"Features": [
 		{
@@ -85,9 +85,9 @@
 		]
 	},
 	{
-		"Name": "item07",
+		"Name": "InstHealth +30\nContMana +5/0.5s/5s",
 		"UniqueId": 6,
-		"Description": "empty",
+		"Description": "InstHealth +30\nContMana +5/.5/5",
 		"SpritePath": "PotionMana",
 		"Features": [
 		{
@@ -105,9 +105,9 @@
 		]
 	},
 	{
-		"Name": "item08",
+		"Name": "InstMana +10\nContMana +7/1s/7s",
 		"UniqueId": 7,
-		"Description": "empty",
+		"Description": "InstMana +10\nContMana +7/1s/7s",
 		"SpritePath": "PotionMana",
 		"Features": [
 		{
@@ -125,9 +125,9 @@
 		]
 	},
 	{
-		"Name": "item09",
+		"Name": "InstMana +40",
 		"UniqueId": 8,
-		"Description": "empty",
+		"Description": "InstMana +40",
 		"SpritePath": "PotionMana",
 		"Features": [
 		{
@@ -138,9 +138,9 @@
 		]
 	},
 	{
-		"Name": "item10",
+		"Name": "ContMana +3/0.5s/7s",
 		"UniqueId": 9,
-		"Description": "empty",
+		"Description": "ContMana +3/0.5s/7s",
 		"SpritePath": "PotionMana",
 		"Features": [
 		{
@@ -149,6 +149,34 @@
 			"Amount": 3,
 			"Interval": 0.5,
 			"Duration": 7
+		}
+		]
+	},
+		{
+		"Name": "TempSpeed +50%/5s",
+		"UniqueId": 10,
+		"Description": "TempSpeed +50%/5s",
+		"SpritePath": "PotionSpeed",
+		"Features": [
+		{
+			"Type": 2,
+			"Stat": 3,
+			"Amount": 2.5,
+			"Duration": 5
+		}
+		]
+	},
+		{
+		"Name": "TempSpeed +50%/10s",
+		"UniqueId": 11,
+		"Description": "TempSpeed +50%/5s",
+		"SpritePath": "PotionSpeed",
+		"Features": [
+		{
+			"Type": 2,
+			"Stat": 3,
+			"Amount": 2.5,
+			"Duration": 10
 		}
 		]
 	}

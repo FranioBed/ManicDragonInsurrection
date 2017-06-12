@@ -17,7 +17,7 @@ public class InstantStatModFeature : Feature
         else if (Stat == StatTypes.Strength)
             throw new NotImplementedException();
         else if (Stat == StatTypes.Agility)
-            throw new NotImplementedException();
+            player.speed += Amount;
         else if (Stat == StatTypes.WeaponDamage)
             throw new NotImplementedException();
     }
@@ -31,7 +31,7 @@ public class InstantStatModFeature : Feature
         else if (Stat == StatTypes.Strength)
             throw new NotImplementedException();
         else if (Stat == StatTypes.Agility)
-            throw new NotImplementedException();
+            player.speed -= Amount;
         else if (Stat == StatTypes.WeaponDamage)
             throw new NotImplementedException();
     }

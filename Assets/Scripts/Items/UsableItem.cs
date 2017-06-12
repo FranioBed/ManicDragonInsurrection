@@ -2,7 +2,6 @@
 
 public class UsableItem : Item
 {
-    public bool IsUsed = false;
     public UsableItem(string name, int uniqueId, string description, string spritePath)
         : base(name, uniqueId, description, spritePath)
     {
@@ -11,11 +10,7 @@ public class UsableItem : Item
 
     public void OnUse(Player player)
     {
-        IsUsed = true;
-
         foreach (var feature in features)
-        {
             feature.Activate(player);
-        }
     }
 }
