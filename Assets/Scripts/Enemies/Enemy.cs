@@ -84,7 +84,7 @@ public class Enemy : MonoBehaviour {
 		return (player.transform.position - transform.position).magnitude;
 		
 	}
-
+    
 	void UpdateAnimator() {
         //TODO: stun animation
 		if (state == State.Idle || state == State.Stunned) {
