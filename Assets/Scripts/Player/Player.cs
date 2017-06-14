@@ -183,7 +183,7 @@ public class Player : MonoBehaviour
             {
                 equipment.fastAccess[1].OnUse(this);
                 //TODO: decrement
-                equipment.fastAccess[0] = null;
+                equipment.fastAccess[1] = null;
             }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -192,7 +192,7 @@ public class Player : MonoBehaviour
             {
                 equipment.fastAccess[2].OnUse(this);
                 //TODO: decrement
-                equipment.fastAccess[0] = null;
+                equipment.fastAccess[2] = null;
             }
         }
     }
