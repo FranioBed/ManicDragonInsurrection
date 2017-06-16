@@ -44,8 +44,8 @@ public class MapModelGenerator : ILevelGenerator
                 minPosition.y = modelRoom.bottomY;
         }
 
-        levelSize.x = maxPosition.x - minPosition.x;
-        levelSize.y = maxPosition.y - minPosition.y;
+        levelSize.x = maxPosition.x - minPosition.x+1;
+        levelSize.y = maxPosition.y - minPosition.y+1;
 
         foreach (ModelRoom modelRoom in MapModelRoomList)
         {
