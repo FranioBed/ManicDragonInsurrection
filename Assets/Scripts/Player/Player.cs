@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,10 +9,7 @@ public class Player : MonoBehaviour
     public float Health { get; set; }
     public float Mana { get; set; }
     public GameObject basicAttackPrefab;
-    public Text healthTextUI;
-    public Text manaTextUI;
-    public Slider healthSlider;
-    public Slider manaSlider;
+    public UIManager uiManager;
 
     private Rigidbody2D rb2D;
     private Equipment equipment = new Equipment();
@@ -27,7 +23,21 @@ public class Player : MonoBehaviour
     private int maxHealth = 100;
     private float manaRegenPerSecond = 0.5f;
     private float healthRegenPerSecond = 0.2f;
+    private bool primarySkillAvailability = true;
+    private bool secondarySkillAvailability = true;
+    private bool tertriarySkillAvailability = true;
 
+    public enum Ability
+    {
+        PRIMARY = 0,
+        SECONDARY = 1,
+        TERTIARY = 2
+    }
+    public delegate void ValueChangedEventHandler(object sender, int value);
+    public event ValueChangedEventHandler HealthChanged;
+    public event ValueChangedEventHandler ManaChanged;
+    public delegate void AvailabilityChangedEventHandler(object sender, Ability ability, bool available, float cooldown);
+    public event AvailabilityChangedEventHandler AbilityAvailabilityChanged;
 
     void Start()
     {
@@ -36,39 +46,111 @@ public class Player : MonoBehaviour
         Mana = maxMana;
         animController = GetComponent<AnimationController>();
         state = State.Idle;
+        HealthChanged(this, (int) Math.Floor(Health));
+        ManaChanged(this, (int) Math.Floor(Mana));
+        AbilityAvailabilityChanged(this, Ability.PRIMARY, true, 1f);
+        AbilityAvailabilityChanged(this, Ability.SECONDARY, true, 1f);
+        AbilityAvailabilityChanged(this, Ability.TERTIARY, true, 1f);
     }
 
     private void Update()
     {
         PassiveRegeneration(Time.deltaTime);
-        healthTextUI.text = Health.ToString();
-        manaTextUI.text = Mana.ToString();
-        healthSlider.value = Health;
-        manaSlider.value = Mana;
-
+        HealthChanged(this, (int)Math.Floor(Health));
+        ManaChanged(this, (int)Math.Floor(Mana));
         basicAttackCooldown = (basicAttackCooldown <= 0 ? basicAttackCooldown = 0 : basicAttackCooldown - Time.deltaTime);
         secondaryAttackCooldownTimer = (secondaryAttackCooldownTimer <= 0 ? secondaryAttackCooldownTimer = 0 : secondaryAttackCooldownTimer - Time.deltaTime);
-        if (Input.GetAxis("Fire1")>0 && basicAttackCooldown == 0)
+        updateSkillStatuses();
+        useSkillsAndUpdateSkillStatuses();
+        FastAccessInput();
+        UpdateAnimationState();
+    }
+
+    private void useSkillsAndUpdateSkillStatuses()
+    {
+        if (Input.GetAxis("Fire1") > 0 && primarySkillAvailability)
         {
             BasicAttack();
+            if (!isPrimaryAttackAvaiable())
+            {
+                primarySkillAvailability = false;
+                AbilityAvailabilityChanged(this, Ability.PRIMARY, false, 0f);
+            }
         }
-        if (Input.GetAxis("Fire2") > 0 && Mana >= 20 && secondaryAttackCooldownTimer == 0)
+        if (Input.GetAxis("Fire2") > 0 && secondarySkillAvailability)
         {
             SecondaryAttack();
+            if (!isSecondaryAttackAvaiable())
+            {
+                secondarySkillAvailability = false;
+                AbilityAvailabilityChanged(this, Ability.SECONDARY, false, 0f);
+            }
         }
-        if (Input.GetAxis("Fire3") > 0)
+        if (Input.GetAxis("Fire3") > 0 && tertriarySkillAvailability)
         {
             DefensiveSkill();
+            if (!isThirdAttackAvaiable())
+            {
+                tertriarySkillAvailability = false;
+                AbilityAvailabilityChanged(this, Ability.TERTIARY, false, 1f);
+            }
         }
         else
         {
             shield = false;
             GetComponent<SpriteRenderer>().color = Color.white;
         }
+    }
 
-        FastAccessInput();
+    private void updateSkillStatuses()
+    {
+        if (!primarySkillAvailability)
+        {
+            if (isPrimaryAttackAvaiable())
+            {
+                primarySkillAvailability = true;
+                AbilityAvailabilityChanged(this, Ability.PRIMARY, true, 1f);
+            }
+            else
+            {
+                AbilityAvailabilityChanged(this, Ability.PRIMARY, false, 1f - basicAttackCooldown / attackSpeed);
+            }
+        }
+        if (!secondarySkillAvailability)
+        {
+            if (isSecondaryAttackAvaiable())
+            {
+                secondarySkillAvailability = true;
+                AbilityAvailabilityChanged(this, Ability.SECONDARY, true, 1f);
+            }
+            else
+            {
+                AbilityAvailabilityChanged(this, Ability.SECONDARY, false, 1f - secondaryAttackCooldownTimer / secondaryAttackCooldown);
+            }
+        }
+        if (!tertriarySkillAvailability)
+        {
+            if (isThirdAttackAvaiable())
+            {
+                tertriarySkillAvailability = true;
+                AbilityAvailabilityChanged(this, Ability.TERTIARY, true, 1f);
+            }
+        }
+    }
 
-        UpdateAnimationState();
+    private bool isPrimaryAttackAvaiable()
+    {
+        return basicAttackCooldown == 0;
+    }
+
+    private bool isSecondaryAttackAvaiable()
+    {
+        return Mana >= 20 && secondaryAttackCooldownTimer == 0;
+    }
+
+    private bool isThirdAttackAvaiable()
+    {
+        return Mana > 0.1;
     }
 
     private void SecondaryAttack()

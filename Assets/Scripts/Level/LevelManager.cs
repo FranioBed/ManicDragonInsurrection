@@ -19,6 +19,9 @@ public class LevelManager
     private GameObject _playerPrefab;
     private int _seed;
 
+    public delegate void ValueChangedEventHandler(object sender, int value);
+    public event ValueChangedEventHandler LevelChanged;
+
     public void injectWorkaround(int seed, GameObject playerPrefab)
     //FIXME: find smart way to inject values from GameManager into this object
     {
@@ -33,6 +36,7 @@ public class LevelManager
         LevelInfo levelInfo = _levelGeneratorSerivce.generate(_seed + _level);
         _holder = _sceneCreatorService.Create(_holder, levelInfo);
         setPlayerToStartPos(_holder.startPos);
+        LevelChanged(this, _level);
     }
 
     public void setLevel(int v)
