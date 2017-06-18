@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
     public event ValueChangedEventHandler ManaChanged;
     public delegate void AvailabilityChangedEventHandler(object sender, Ability ability, bool available, float cooldown);
     public event AvailabilityChangedEventHandler AbilityAvailabilityChanged;
+    public delegate void FastActionSlotChangedHandler(object sender, int fastActionSlotIndex, string itemMinature);
+    public event FastActionSlotChangedHandler FastActionSlotChanged;
 
     void Start()
     {
@@ -51,6 +53,9 @@ public class Player : MonoBehaviour
         AbilityAvailabilityChanged(this, Ability.PRIMARY, true, 1f);
         AbilityAvailabilityChanged(this, Ability.SECONDARY, true, 1f);
         AbilityAvailabilityChanged(this, Ability.TERTIARY, true, 1f);
+        FastActionSlotChanged(this, 0, null);
+        FastActionSlotChanged(this, 1, null);
+        FastActionSlotChanged(this, 2, null);
     }
 
     private void Update()
@@ -254,6 +259,7 @@ public class Player : MonoBehaviour
         {
             if (equipment.fastAccess[0] != null)
             {
+                FastActionSlotChanged(this, 0, "");
                 equipment.fastAccess[0].OnUse(this);
                 //TODO: decrement
                 equipment.fastAccess[0] = null;
@@ -263,6 +269,7 @@ public class Player : MonoBehaviour
         {
             if (equipment.fastAccess[1] != null)
             {
+                FastActionSlotChanged(this, 1, "");
                 equipment.fastAccess[1].OnUse(this);
                 //TODO: decrement
                 equipment.fastAccess[1] = null;
@@ -272,6 +279,7 @@ public class Player : MonoBehaviour
         {
             if (equipment.fastAccess[2] != null)
             {
+                FastActionSlotChanged(this, 2, "");
                 equipment.fastAccess[2].OnUse(this);
                 //TODO: decrement
                 equipment.fastAccess[2] = null;
@@ -291,6 +299,7 @@ public class Player : MonoBehaviour
             equipment.inventory.Add(equipment.fastAccess[id]);
         equipment.fastAccess[id] = newItem;
         RemoveItemFromInventory(newItem);
+        FastActionSlotChanged(this, id, newItem.Miniature);
     }
 
     private void EquipWeapont(EquippableItem newWeapon)

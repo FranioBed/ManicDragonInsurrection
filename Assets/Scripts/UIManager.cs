@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -25,7 +26,8 @@ public class UIManager : MonoBehaviour {
     public Image quickAccess3;
     public Text levelText;
 
-    private IDictionary<Player.Ability, Image> uiMap;
+    private IDictionary<Player.Ability, Image> uiAbilitiesMap;
+    private Image[] uiFastActionsList;
 
     void Start()
     {
@@ -33,26 +35,41 @@ public class UIManager : MonoBehaviour {
         sourcePlayer.ManaChanged += ManaChanged;
         sourcePlayer.AbilityAvailabilityChanged += AbilityAvailabilityChanged;
         sourceLevelManager.LevelChanged += LevelChanged;
-        uiMap = new Dictionary<Player.Ability, Image> {
+        sourcePlayer.FastActionSlotChanged += FastActionSlotChanged;
+        uiAbilitiesMap = new Dictionary<Player.Ability, Image> {
             { Player.Ability.PRIMARY,   ability1 },
             { Player.Ability.SECONDARY, ability2 },
             { Player.Ability.TERTIARY,  ability3 }
         };
+        uiFastActionsList = new Image[3] { quickAccess1, quickAccess2, quickAccess3 };
+    }
+
+    private void FastActionSlotChanged(object sender, int fastActionSlotIndex, string itemMinature)
+    {
+        uiFastActionsList[fastActionSlotIndex].sprite = Resources.Load<Sprite>(itemMinature);
+        if (uiFastActionsList[fastActionSlotIndex].sprite)
+        {
+            uiFastActionsList[fastActionSlotIndex].color = new Color(1f, 1f, 1f, 1f);
+        }
+        else
+        {
+            uiFastActionsList[fastActionSlotIndex].color = new Color(1f, 1f, 1f, 0f);
+        }
     }
 
     private void AbilityAvailabilityChanged(object sender, Player.Ability ability, bool available, float cooldown)
     {
         if (available)
         {
-            uiMap[ability].color =
-                new Color(uiMap[ability].color.r, uiMap[ability].color.g, uiMap[ability].color.b, ALPHA_ACTIVE);
+            uiAbilitiesMap[ability].color =
+                new Color(uiAbilitiesMap[ability].color.r, uiAbilitiesMap[ability].color.g, uiAbilitiesMap[ability].color.b, ALPHA_ACTIVE);
         }
         else
         {
-            uiMap[ability].color =
-              new Color(uiMap[ability].color.r, uiMap[ability].color.g, uiMap[ability].color.b, ALPHA_INACTIVE);
+            uiAbilitiesMap[ability].color =
+              new Color(uiAbilitiesMap[ability].color.r, uiAbilitiesMap[ability].color.g, uiAbilitiesMap[ability].color.b, ALPHA_INACTIVE);
         }
-        uiMap[ability].fillAmount = cooldown;
+        uiAbilitiesMap[ability].fillAmount = cooldown;
     }
 
     private void HealthChanged(object sender, int health)
