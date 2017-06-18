@@ -341,18 +341,26 @@ public class Player : MonoBehaviour
         equipment.inventory.Add(newItem);
     }
 
-    public void AddItemToInventory(UsableItem newItem)
+    public bool AddItemToInventory(UsableItem newItem)
     {
         equipment.inventory.Add(newItem);
         //TODO: remove: (only for tests)
-        if(equipment.fastAccess[0] == null)
+        if (equipment.fastAccess[0] == null)
+        {
             EquipItemToFastAccess(0, newItem);
-        else if (equipment.fastAccess[1] == null)
+            return true;
+        }
+        if (equipment.fastAccess[1] == null)
+        {
             EquipItemToFastAccess(1, newItem);
-        else if (equipment.fastAccess[2] == null)
+            return true;
+        }
+        if (equipment.fastAccess[2] == null)
+        {
             EquipItemToFastAccess(2, newItem);
-        else
-            EquipItemToFastAccess(0, newItem);
+            return true;
+        }
+        return false;
     }
 
     public void RemoveItemFromInventory(Item item)

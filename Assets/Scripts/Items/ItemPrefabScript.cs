@@ -18,8 +18,8 @@ public class ItemPrefabScript : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<Player>().AddItemToInventory(Item);
-            Destroy(gameObject);
+            if(other.gameObject.GetComponent<Player>().AddItemToInventory(Item))
+                Destroy(gameObject);
         }
     }
 }
