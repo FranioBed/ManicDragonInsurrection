@@ -16,13 +16,13 @@ public class LevelManager
     private int _level = 0;
     private LevelGameObjectsHolder _holder = new LevelGameObjectsHolder();
 
-    private GameObject _playerPrefab;
+    private Player _playerPrefab;
     private int _seed;
 
     public delegate void ValueChangedEventHandler(object sender, int value);
     public event ValueChangedEventHandler LevelChanged;
 
-    public void injectWorkaround(int seed, GameObject playerPrefab)
+    public void injectWorkaround(int seed, Player playerPrefab)
     //FIXME: find smart way to inject values from GameManager into this object
     {
         _seed = seed;

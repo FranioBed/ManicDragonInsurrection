@@ -1,19 +1,14 @@
-﻿using Assets.Scripts.Level.LevelDTO;
-using Assets.Scripts.SceneCreator;
-using UnityEngine;
+﻿using UnityEngine;
 using Zenject;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     [Inject]
     LevelManager _levelManager;
-    //TODO
-    //AI
-    //UIController
-    //anything that somes to mind...
     [Inject]
     SettingsInstaller.GameSettings _settings;
 
-    public GameObject playerPrefab;
+    public Player playerPrefab;
 
     private int _seed;
 
@@ -23,6 +18,12 @@ public class GameManager : MonoBehaviour {
         _levelManager.injectWorkaround(_seed, playerPrefab);
         _levelManager.setLevel(0);
         _levelManager.goToNextLevel();
+        playerPrefab.OnDeath += RollGameOver;
+    }
+
+    private void RollGameOver(object sender)
+    {
+        SceneManager.LoadScene("GameOver");
     }
 
     private int setSeed()
@@ -35,17 +36,5 @@ public class GameManager : MonoBehaviour {
     public int getSeed()
     {
         return _seed;
-    }
-
-
-
-    public void FixedUpdate()
-    {
-        //todo
-    }
-
-    public void Update()
-    {
-        //todo
     }
 }

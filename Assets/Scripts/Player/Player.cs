@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
     public event AvailabilityChangedEventHandler AbilityAvailabilityChanged;
     public delegate void FastActionSlotChangedHandler(object sender, int fastActionSlotIndex, string itemMinature);
     public event FastActionSlotChangedHandler FastActionSlotChanged;
+    public delegate void VoidEventHandler(object sender);
+    public event VoidEventHandler OnDeath;
 
     void Start()
     {
@@ -184,7 +186,7 @@ public class Player : MonoBehaviour
     private void DefensiveSkill()
     {
         //TODO: put in correct place
-        float manaPerSecond = 5f;
+        float manaPerSecond = 10f;
         Mana -= manaPerSecond * Time.deltaTime;
         shield = true;
         //visual cue for shield, TODO: replace with additional sprite?
@@ -375,6 +377,7 @@ public class Player : MonoBehaviour
         if (Health < 0)
         {
             state = State.Die;
+            OnDeath(this);
         }
     }
 
